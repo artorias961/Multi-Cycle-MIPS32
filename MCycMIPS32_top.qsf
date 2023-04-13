@@ -54,9 +54,6 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name VERILOG_FILE SourceCode/mux2to1_32.v
-set_global_assignment -name VERILOG_FILE SourceCode/ID.v
-set_global_assignment -name VERILOG_FILE SourceCode/ALU.v
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
@@ -452,4 +449,11 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_Lite -section_id Top
+set_global_assignment -name VERILOG_FILE SourceCode/signext.v
+set_global_assignment -name VERILOG_FILE SourceCode/shiftLeft2.v
+set_global_assignment -name VERILOG_FILE SourceCode/RegisterFile.v
+set_global_assignment -name VERILOG_FILE SourceCode/PC.v
+set_global_assignment -name VERILOG_FILE SourceCode/mux2to1_32.v
+set_global_assignment -name VERILOG_FILE SourceCode/ID.v
+set_global_assignment -name VERILOG_FILE SourceCode/ALU.v
 set_global_assignment -name VERILOG_FILE SourceCode/MCycMIPS32_top.v
