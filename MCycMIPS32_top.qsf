@@ -460,3 +460,4 @@ set_global_assignment -name VERILOG_FILE SourceCode/ALU.v
 set_global_assignment -name VERILOG_FILE SourceCode/MCycMIPS32_top.v
 set_global_assignment -name VERILOG_FILE SourceCode/zeroExtImm.v
 set_global_assignment -name VERILOG_FILE SourceCode/shiftRight2.v
+set_global_assignment -name VERILOG_FILE SourceCode/mux8to1_32.v

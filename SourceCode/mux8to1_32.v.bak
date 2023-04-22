@@ -1,0 +1,12 @@
+module mux8to1_32(in0, in1, in2, in3, in4, in5, in6, in7, sel, out);
+	// The input of the module
+	input 		in0;
+	input 		in1;
+	input 		in2;
+	input 		in3;
+	input 		in4;
+	input 		in5;
+	input 		in6;
+	input 		in7;
+
+endmodule
