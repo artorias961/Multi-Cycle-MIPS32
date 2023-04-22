@@ -1,6 +1,7 @@
-module MCycMIPS32_top(MAX10_CLK1_50, KEY, SW, LEDR, 
+module MCycMIPS32_top(nrst, MAX10_CLK1_50, KEY, SW, LEDR, 
                       HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                       
+    input nrst;
                       
     input MAX10_CLK1_50;
     input  [1:0] KEY; //two keys, so two bits
@@ -12,6 +13,85 @@ module MCycMIPS32_top(MAX10_CLK1_50, KEY, SW, LEDR,
     output [7:0] HEX3;
     output [7:0] HEX4;
     output [7:0] HEX5;
+    
+    wire        IR, MDR, MemToReg, RegDst, RegA, RegB, 
+                AluSrcA, AluSrcB, AluResult, PCSrc, IorD, RegWrite, PCWrite;
+              
+    wire        zeroflag;
+    
+    wire [31:0] d_in;
+    wire [31:0] r_id;
+    wire [31:0] mdr_r;
+    wire [31:0] w_data;
+    
+    wire [5:0] op;
+    wire [5:0] func;
+    wire [4:0] rs;
+    wire [4:0] rt;
+    wire [4:0] rd;
+    wire [4:0] shamt;
+    wire [15:0] imm16;
+    wire [25:0] addr26;
+    
+    wire [4:0] w_reg;
+    wire [31:0] r_data1;
+    wire [31:0] r_data1_r;
+    wire [31:0] r_data2;
+    wire [31:0] r_data2_r;
+    wire [31:0] imm32;
+    wire [31:0] shift_imm32;
+    wire [31:0] zero_imm32;
+    wire [31:0] alu_A;
+    wire [31:0] alu_B;
+    wire [31:0] alu_result;
+    wire [31:0] alu_result_r;
+    wire [31:0] pc;
+    wire [31:0] PCSrc_out;
+    wire [31:0] addr32;
+    wire [31:0] address;
+    
+    wire [3:0] aluop;
+    wire [27:0] addr28;
+    
+    reg32           M1 (.di(d_in), .ctrl(IR), .do(r_id));
+    
+    reg32           M2(.di(d_in), .ctrl(MDR), .do(mdr_r));
+    
+    ID              M3(.instr(r_id), .op(op), .rs(rs), .rt(rt), .rd(rd), .shamt(shamt), .func(func), .imm16(imm16), .address(addr26));
+    
+    mux2to1_32      M4(.in0(alu_result_r), .in1(mdr_r), .sel(MemToReg), .out(w_data));
+    
+    mux2to1_32      M5(.in0(rt), .in1(rd), .sel(RegDst), .out(w_reg));
+    
+    RegisterFile    M6(.ReadReg1(rs), .ReadReg2(rt), .WriteReg(w_reg), .WriteData(w_data), .ReadData1(r_data1), .ReadData2(r_data2), .RegWrite(RegWrite));
+    
+    signext         M7(.imm16(imm16), .imm32(imm32));
+    
+    zeroExtImm      M8(.in(imm16), .out(zero_imm32));
+    
+    reg32           M9(.di(r_data1), .ctrl(RegA), .do(r_data1_r));
+    
+    reg32          M10(.di(r_data2), .ctrl(RegB), .do(r_data2_r));
+    
+    shiftLeft2     M11(.in(imm32), .out(shift_imm32));
+    
+    mux8to1_32     M12(.in0(r_data2_r), .in1(shamt), .in2(imm32), .in3(shift_imm32), .in4(32'd4), .in5(zero_imm32), .in6(), .in7(), .sel(AluSrcB), .out(alu_B));
+    
+    shiftleft2_26  M13(.di(addr26), .do(addr28));
+    
+    bit_extender_4 M14(.di_28(addr28), .pc(pc), .do_32(addr32));
+    
+    mux2to1_32     M15(.in0(pc), .in1(r_data1_r), .sel(AluSrcA), .out(alu_A));
+    
+    ALU            M16(.ALUop(aluop), .A(alu_A), .B(alu_B), .ALUResult(alu_result), .zero(zeroflag));
+    
+    reg32          M17(.di(alu_result), .ctrl(AluResult), .do(alu_result_r));
+    
+    mux8to1_32     M18(.in0(alu_result), .in1(alu_result_r), .in2(addr32), .in3(r_data1_r), .in4(), .in5(), .in6(), .in7(), .sel(PCSrc), .out(PCSrc_out));
+    
+    PC             M19(.clk(PCWrite), .nrst(nrst), .ce(ce), .newPc(PCSrc_out), .pc(pc));
+    
+    mux2to1_32     M20(.in0(pc), .in1(alu_result_r), .sel(IorD), .out(address));
     
     
     

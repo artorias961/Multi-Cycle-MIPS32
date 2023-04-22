@@ -1,0 +1,630 @@
+Analysis & Elaboration report for MCycMIPS32_top
+Sat Apr 22 16:02:47 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "mux2to1_32:M20"
+  6. Port Connectivity Checks: "PC:M19"
+  7. Port Connectivity Checks: "mux8to1_32:M18"
+  8. Port Connectivity Checks: "ALU:M16"
+  9. Port Connectivity Checks: "mux8to1_32:M12"
+ 10. Port Connectivity Checks: "mux2to1_32:M5"
+ 11. Port Connectivity Checks: "ID:M3"
+ 12. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                      ;
++------------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Sat Apr 22 16:02:47 2023          ;
+; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                      ; MCycMIPS32_top                                 ;
+; Top-level Entity Name              ; MCycMIPS32_top                                 ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
+; UFM blocks                         ; N/A until Partition Merge                      ;
+; ADC blocks                         ; N/A until Partition Merge                      ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                            ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; MCycMIPS32_top     ; MCycMIPS32_top     ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Restructure Multiplexers                                         ; Off                ; Auto               ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux2to1_32:M20"                                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PC:M19"                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ce   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1_32:M18"                                                                                                                            ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; in4  ; Input ; Info     ; Explicitly unconnected                                                                                                                      ;
+; in5  ; Input ; Info     ; Explicitly unconnected                                                                                                                      ;
+; in6  ; Input ; Info     ; Explicitly unconnected                                                                                                                      ;
+; in7  ; Input ; Info     ; Explicitly unconnected                                                                                                                      ;
+; sel  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "sel[2..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:M16"                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1_32:M12"                                                                                                                                    ;
++------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                       ;
++------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; in1        ; Input ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in1[31..5]" will be connected to GND. ;
+; in4[31..3] ; Input ; Info     ; Stuck at GND                                                                                                                                  ;
+; in4[1..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                  ;
+; in4[2]     ; Input ; Info     ; Stuck at VCC                                                                                                                                  ;
+; in6        ; Input ; Info     ; Explicitly unconnected                                                                                                                        ;
+; in7        ; Input ; Info     ; Explicitly unconnected                                                                                                                        ;
+; sel        ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "sel[2..1]" will be connected to GND.   ;
++------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux2to1_32:M5"                                                                                                                                ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                       ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; in0  ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in0[31..5]" will be connected to GND. ;
+; in1  ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in1[31..5]" will be connected to GND. ;
+; out  ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (5 bits) it drives; bit(s) "out[31..5]" have no fanouts                      ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID:M3"                                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; op   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; func ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sat Apr 22 16:02:38 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MCycMIPS32 -c MCycMIPS32_top --analysis_and_elaboration
+Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Warning (10274): Verilog HDL macro warning at MyDefines.v(123): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 122 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 123
+Info (12021): Found 0 design units, including 0 entities, in source file sourcecode/mydefines.v
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/signext.v
+    Info (12023): Found entity 1: signext File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/signext.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/shiftleft2.v
+    Info (12023): Found entity 1: shiftLeft2 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftLeft2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/registerfile.v
+    Info (12023): Found entity 1: RegisterFile File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/RegisterFile.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/pc.v
+    Info (12023): Found entity 1: PC File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/mux2to1_32.v
+    Info (12023): Found entity 1: mux2to1_32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/id.v
+    Info (12023): Found entity 1: ID File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ID.v Line: 1
+Warning (10274): Verilog HDL macro warning at MyDefines.v(122): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 122 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 122
+Warning (10274): Verilog HDL macro warning at MyDefines.v(123): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 122 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 123
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/alu.v
+    Info (12023): Found entity 1: ALU File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ALU.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/mcycmips32_top.v
+    Info (12023): Found entity 1: MCycMIPS32_top File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/zeroextimm.v
+    Info (12023): Found entity 1: zeroExtImm File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/zeroExtImm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/shiftright2.v
+    Info (12023): Found entity 1: shiftRight2 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftRight2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/mux8to1_32.v
+    Info (12023): Found entity 1: mux8to1_32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at reg32.v(5): "do" is SystemVerilog-2005 keyword File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 5
+Warning (10463): Verilog HDL Declaration warning at reg32.v(7): "do" is SystemVerilog-2005 keyword File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/reg32.v
+    Info (12023): Found entity 1: reg32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/bit_extender_4.v
+    Info (12023): Found entity 1: bit_extender_4 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/bit_extender_4.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at shiftleft2_26.v(3): "do" is SystemVerilog-2005 keyword File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/shiftleft2_26.v
+    Info (12023): Found entity 1: shiftleft2_26 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at MCycMIPS32_top.v(92): created implicit net for "ce" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 92
+Info (12127): Elaborating entity "MCycMIPS32_top" for the top level hierarchy
+Warning (10034): Output port "LEDR" at MCycMIPS32_top.v(9) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 9
+Warning (10034): Output port "HEX0" at MCycMIPS32_top.v(10) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 10
+Warning (10034): Output port "HEX1" at MCycMIPS32_top.v(11) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 11
+Warning (10034): Output port "HEX2" at MCycMIPS32_top.v(12) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 12
+Warning (10034): Output port "HEX3" at MCycMIPS32_top.v(13) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 13
+Warning (10034): Output port "HEX4" at MCycMIPS32_top.v(14) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 14
+Warning (10034): Output port "HEX5" at MCycMIPS32_top.v(15) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 15
+Info (12128): Elaborating entity "reg32" for hierarchy "reg32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 56
+Warning (10240): Verilog HDL Always Construct warning at reg32.v(10): inferring latch(es) for variable "do", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[0]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[1]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[2]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[3]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[4]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[5]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[6]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[7]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[8]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[9]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[10]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[11]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[12]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[13]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[14]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[15]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[16]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[17]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[18]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[19]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[20]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[21]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[22]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[23]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[24]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[25]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[26]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[27]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[28]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[29]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[30]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (10041): Inferred latch for "do[31]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
+Info (12128): Elaborating entity "ID" for hierarchy "ID:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 60
+Info (12128): Elaborating entity "mux2to1_32" for hierarchy "mux2to1_32:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 62
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:M6" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 66
+Info (12128): Elaborating entity "signext" for hierarchy "signext:M7" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 68
+Info (12128): Elaborating entity "zeroExtImm" for hierarchy "zeroExtImm:M8" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 70
+Info (12128): Elaborating entity "shiftLeft2" for hierarchy "shiftLeft2:M11" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 76
+Info (12128): Elaborating entity "mux8to1_32" for hierarchy "mux8to1_32:M12" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 78
+Warning (10270): Verilog HDL Case Statement warning at mux8to1_32.v(22): incomplete case statement has no default case item File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Warning (10240): Verilog HDL Always Construct warning at mux8to1_32.v(22): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[0]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[1]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[2]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[3]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[4]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[5]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[6]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[7]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[8]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[9]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[10]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[11]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[12]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[13]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[14]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[15]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[16]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[17]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[18]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[19]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[20]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[21]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[22]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[23]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[24]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[25]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[26]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[27]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[28]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[29]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[30]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (10041): Inferred latch for "out[31]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
+Info (12128): Elaborating entity "shiftleft2_26" for hierarchy "shiftleft2_26:M13" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 80
+Info (12128): Elaborating entity "bit_extender_4" for hierarchy "bit_extender_4:M14" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 82
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:M16" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 86
+Info (12128): Elaborating entity "PC" for hierarchy "PC:M19" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 92
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "d_in[31]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[30]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[29]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[28]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[27]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[26]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[25]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[24]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[23]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[22]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[21]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[20]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[19]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[18]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[17]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[16]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[15]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[14]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[13]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[12]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[11]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[10]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[9]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[8]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[7]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[6]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[5]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[4]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[3]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[2]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[1]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+    Warning (12110): Net "d_in[0]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 22
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (20013): Ignored 211 assignments for entity "DE10_Lite" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CLK_10 -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[10] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[11] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[12] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[13] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[14] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[15] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[8] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[9] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to ARDUINO_RESET_N -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_I2C_SCL -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_I2C_SDA -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[10] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[11] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[12] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[13] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[14] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[15] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[16] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[17] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[18] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[19] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[20] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[21] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[22] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[23] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[24] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[25] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[26] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[27] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[28] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[29] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[30] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[31] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[32] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[33] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[34] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[35] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[8] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[9] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_CS_N -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_INT[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_INT[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SCLK -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SDI -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SDO -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK1_50 -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK2_50 -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3] -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE10_Lite was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_Lite -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_Lite -section_id Top was ignored
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 264 warnings
+    Info: Peak virtual memory: 4725 megabytes
+    Info: Processing ended: Sat Apr 22 16:02:47 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
+
+
