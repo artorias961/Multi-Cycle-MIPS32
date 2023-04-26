@@ -109,7 +109,6 @@ RA							(UNSAFE)
 
 // Operation code
 `define _OP_RTYPE		6'b000000
-`define _OP_ITYPE       6'b000001
 `define _OP_ADDI		6'b001000
 `define _OP_LW			6'b100011
 `define _OP_SW			6'b101011

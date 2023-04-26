@@ -1,0 +1,143 @@
+module control(clk, nrst, 
+                op, func, 
+                IR, MDR, MemtoReg, RegDst, RegWrite, RegA, RegB, AluSrcA,
+                AluSrcB, ALUop, PCSrc, IorD, PCWrite, MemRead, MemWrite);
+    //initialize the inputs and the outputs
+    input       clk, nrst;
+    input [5:0] op;
+    input [5:0] func;
+    
+    output       IR, MDR, MemtoReg, RegDst, RegWrite, RegA, RegB, AluSrcA,
+                 IorD, PCWrite, MemRead, MemWrite;
+    output [3:0] ALUop;
+    output [2:0] AluSrcB;
+    output [1:0] PCSrc;
+    
+    //outputs must be turned to registers to store the data
+    reg         IR, MDR, MemtoReg, RegDst, RegWrite, RegA, RegB, AluSrcA,
+                IorD, PCWrite, MemRead, MemWrite;
+    reg [3:0]   ALUop;
+    reg [2:0]   AluSrcB;
+    reg [1:0]   PCSrc;
+    
+    //4 bit parameter for all the states that will be used
+	parameter [3:0] 
+                S_IF        = 4'd0,
+                S_ID        = 4'd1,
+                S_EXE_R     = 4'd2,
+                S_EXE_I     = 4'd3,
+                S_EXE_BEQ   = 4'd4,
+                S_EXE_LW    = 4'd5,
+                S_MEM_LW    = 4'd6,
+                S_MEM_SW    = 4'd7,
+                S_WB_R      = 4'd8,
+                S_WB_I      = 4'd9,
+                S_WB_LW     = 4'd10;  
+                
+                
+    //implementation using 3 always blocks
+    //Next comb. logic
+    //local variables
+    reg [3:0] currState;
+    reg [3:0] nextState;
+    
+    
+    always @ (*) begin
+        case(currState) 
+            S_IF: begin
+                nextState = S_ID;
+            end
+            
+            S_ID: begin
+                
+       
+            end
+            S_EXE_R: begin
+            
+            end
+            S_EXE_I: begin
+            
+            end
+            S_EXE_BEQ: begin
+            
+            end
+            S_EXE_LW: begin
+            
+            end
+            S_MEM_LW: begin
+            
+            end
+            S_MEM_SW: begin
+            
+            end
+            S_WB_R: begin
+            
+            end
+            S_WB_I: begin
+            
+            end
+            S_WB_LW: begin
+            
+            end
+            default: begin
+                nextState = S_IF;
+            end
+        endcase
+    end
+    
+    //STATE Register
+    always @ (posedge clk or negedge nrst) begin
+        if (nrst == 1'b0) begin
+        
+        end else begin
+        
+        end
+    
+    
+    end
+    
+    // Output comb. circuit
+    always @  (*) begin
+        case (currState)
+            S_ID: begin
+            
+            end
+            S_EXE_R: begin
+            
+            end
+            S_EXE_I: begin
+            
+            end
+            S_EXE_BEQ: begin
+            
+            end
+            S_EXE_LW: begin
+            
+            end
+            S_MEM_LW: begin
+            
+            end
+            S_MEM_SW: begin
+            
+            end
+            S_WB_R: begin
+            
+            end
+            S_WB_I: begin
+            
+            end
+            S_WB_LW: begin 
+            
+            end
+            
+        
+        endcase
+    
+    
+    end
+
+
+
+endmodule
+
+
