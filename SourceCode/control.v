@@ -3,21 +3,21 @@
 module control(clk, nrst, 
                 op, func, 
                 IR, MDR, MemtoReg, RegDst, RegWrite, RegA, RegB, AluSrcA,
-                AluSrcB, ALUop, PCSrc, IorD, PCWrite, MemRead, MemWrite);
+                AluSrcB, ALUop, ALUResult, PCSrc, IorD, PCWrite, MemRead, MemWrite);
     //initialize the inputs and the outputs
     input       clk, nrst;
     input [5:0] op;
     input [5:0] func;
     
     output       IR, MDR, MemtoReg, RegDst, RegWrite, RegA, RegB, AluSrcA,
-                 IorD, PCWrite, MemRead, MemWrite;
+                 ALUResult, IorD, PCWrite, MemRead, MemWrite;
     output [3:0] ALUop;
     output [2:0] AluSrcB;
     output [1:0] PCSrc;
     
     //outputs must be turned to registers to store the data
     reg         IR, MDR, MemtoReg, RegDst, RegWrite, RegA, RegB, AluSrcA,
-                IorD, PCWrite, MemRead, MemWrite;
+                ALUResult, IorD, PCWrite, MemRead, MemWrite;
     reg [3:0]   ALUop;
     reg [2:0]   AluSrcB;
     reg [1:0]   PCSrc;
@@ -119,47 +119,242 @@ module control(clk, nrst,
         end
     
     // Output comb. circuit
-    always @  (*) begin
+    
+    //Not 100% yet, this is just what Daniel has so far
+    //We'll need to make changes later
+    
+    always @ (*) begin
         case (currState)
+            S_IF: begin
+                IR          = 1'b1;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b100;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b0;
+                PCWrite     = 1'b1;
+                MemRead     = 1'b1;
+                MemWrite    = 1'b0;
+            
+            end
             S_ID: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b1;
+                RegB        = 1'b1;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b011;
+                ALUResult   = 1'b1;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b0;
+                PCWrite     = 1'b0;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
             
             end
             S_EXE_R: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b1;
+                AluSrcB     = 3'b000;
+                ALUResult   = 1'b1;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b0;
+                PCWrite     = 1'b0;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
             
             end
             S_EXE_I: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b1;
+                AluSrcB     = 3'b010;
+                ALUResult   = 1'b1;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b0;
+                PCWrite     = 1'b0;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
             
             end
             S_EXE_BEQ: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b1;
+                AluSrcB     = 3'b100;
+                ALUResult   = 1'b1;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b01;
+                IorD        = 1'b0;
+                PCWrite     = 1'b1;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b1;
             
             end
             S_EXE_LW: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b1;
+                AluSrcB     = 3'b010;
+                ALUResult   = 1'b1;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b0;
+                PCWrite     = 1'b0;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
             
             end
             S_MEM_LW: begin
+                IR          = 1'b0;
+                MDR         = 1'b1;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b100;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b1;
+                PCWrite     = 1'b1;
+                MemRead     = 1'b1;
+                MemWrite    = 1'b0;
             
             end
             S_MEM_SW: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b100;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b1;
+                PCWrite     = 1'b1;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b1;
             
             end
             S_WB_R: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b1;
+                RegWrite    = 1'b1;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b100;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b0;
+                PCWrite     = 1'b0;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
             
             end
             S_WB_I: begin
+                IR          = 1'b0;
+                MDR         = 1'b1;
+                MemtoReg    = 1'b1;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b1;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b100;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b1;
+                PCWrite     = 1'b0;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
             
             end
-            S_WB_LW: begin 
+            S_WB_LW: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b1;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b1;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b100;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b0;
+                PCWrite     = 1'b1;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
             
             end
-            
-        
+            default: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b000;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b00;
+                IorD        = 1'b0;
+                PCWrite     = 1'b0;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
+                
+            end
         endcase
-    
-    
     end
-
-
-
 endmodule
 
 

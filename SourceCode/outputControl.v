@@ -153,7 +153,6 @@ module outputControl(op,
 			end
 		endcase
 	end
-
 endmodule	
 	
 	

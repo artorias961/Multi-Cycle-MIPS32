@@ -15,9 +15,10 @@ module MCycMIPS32_top(clk, nrst, MAX10_CLK1_50, KEY, SW, LEDR,
     output [7:0] HEX5;
     
     wire        IR, MDR, MemToReg, RegDst, RegA, RegB, 
-                AluSrcA, AluResult, IorD, RegWrite, PCWrite;
+                AluSrcA, AluResult, IorD, RegWrite, 
+                PCWrite, MemRead, MemWrite;
                 
-    wire [1:0] PCSrc;
+    wire [1:0]  PCSrc;
     wire [2:0]  AluSrcB;
     wire        zeroflag;
     
@@ -95,9 +96,9 @@ module MCycMIPS32_top(clk, nrst, MAX10_CLK1_50, KEY, SW, LEDR,
     
     mux2to1_32     M20(.in0(pc), .in1(alu_result_r), .sel(IorD), .out(address));
     
-    outputControl  M21(.op(op), .zero(zeroflag), .PCWriteCond(), .PCWrite(), .IorD(IorD), .MemRead(), .MemWrite(), .MemtoReg(MemToReg),
-                    .IRWrite(IR), .PCSource(PCSrc), .ALUop(aluop), .AluSrcA(AluSrcA), .AluSrcB(AluSrcB), .RegWrite(), .RegDst(RegDst));
-    
+    control        M21(.clk(clk), .nrst(nrst), .op(op), .func(func), 
+                    .IR(IR), .MDR(MDR), .MemtoReg(MemToReg), .RegDst(RegDst), .RegWrite(RegWrite), .RegA(RegA), .RegB(RegB), .AluSrcA(AluSrcA),
+                    .AluSrcB(AluSrcB), .ALUop(aluop), .ALUResult(AluResult), .PCSrc(PCSrc), .IorD(IorD), .PCWrite(PCWrite), .MemRead(MemRead), .MemWrite(MemWrite));
     
     
 
