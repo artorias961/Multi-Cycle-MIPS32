@@ -14,92 +14,24 @@ module MCycMIPS32_top(clk, nrst, MAX10_CLK1_50, KEY, SW, LEDR,
     output [7:0] HEX4;
     output [7:0] HEX5;
     
-    wire        IR, MDR, MemToReg, RegDst, RegA, RegB, 
-                AluSrcA, AluResult, IorD, RegWrite, 
-                PCWrite, MemRead, MemWrite;
-                
-    wire [1:0]  PCSrc;
-    wire [2:0]  AluSrcB;
-    wire        zeroflag;
+    wire MemWrite, MemRead;
+    wire nce_rom, nce_ram, nce_outputModule;
     
-    wire [31:0] d_in;
-    wire [31:0] r_id;
-    wire [31:0] mdr_r;
-    wire [31:0] w_data;
+    wire [31:0] addr;
+    wire [31:0] dataOut;
+    wire [31:0] dataIn;
     
-    wire [5:0] op;
-    wire [5:0] func;
-    wire [4:0] rs;
-    wire [4:0] rt;
-    wire [4:0] rd;
-    wire [4:0] shamt;
-    wire [15:0] imm16;
-    wire [25:0] addr26;
     
-    wire [4:0] w_reg;
-    wire [31:0] r_data1;
-    wire [31:0] r_data1_r;
-    wire [31:0] r_data2;
-    wire [31:0] r_data2_r;
-    wire [31:0] imm32;
-    wire [31:0] shift_imm32;
-    wire [31:0] zero_imm32;
-    wire [31:0] alu_A;
-    wire [31:0] alu_B;
-    wire [31:0] alu_result;
-    wire [31:0] alu_result_r;
-    wire [31:0] pc;
-    wire [31:0] PCSrc_out;
-    wire [31:0] addr32;
-    wire [31:0] address;
     
-    wire [3:0] aluop;
-    wire [27:0] addr28;
+    MIPS32          M1(.clk(clk), .nrst(nrst), .MemWrite(MemWrite), .MemRead(MemRead), .data_in(dataIn), .address(addr), .data_out(dataOut));
     
-    reg32           M1 (.di(d_in), .ctrl(IR), .do(r_id));
+    rom             M2(.nrst(nrst), .nce(nce_rom), .re(MemRead), .addr(addr[10:2]), .d_out(dataIn));
     
-    reg32           M2(.di(d_in), .ctrl(MDR), .do(mdr_r));
+    ram             M3(.clk(clk), .nce(nce_ram), .re(MemRead), .we(MemWrite), .addr(addr[10:2]), .d_in(dataOut), .d_out(dataIn));
     
-    ID              M3(.instr(r_id), .op(op), .rs(rs), .rt(rt), .rd(rd), .shamt(shamt), .func(func), .imm16(imm16), .address(addr26));
+    outputModule    M4(.clk(clk), .nce(nce_outputModule), .we(MemWrite), .d_in(dataOut), .pins(LEDR));
     
-    mux2to1_32      M4(.in0(alu_result_r), .in1(mdr_r), .sel(MemToReg), .out(w_data));
-    
-    mux2to1_32      M5(.in0(rt), .in1(rd), .sel(RegDst), .out(w_reg));
-    
-    RegisterFile    M6(.ReadReg1(rs), .ReadReg2(rt), .WriteReg(w_reg), .WriteData(w_data), .ReadData1(r_data1), .ReadData2(r_data2), .RegWrite(RegWrite));
-    
-    signext         M7(.imm16(imm16), .imm32(imm32));
-    
-    zeroExtImm      M8(.in(imm16), .out(zero_imm32));
-    
-    reg32           M9(.di(r_data1), .ctrl(RegA), .do(r_data1_r));
-    
-    reg32          M10(.di(r_data2), .ctrl(RegB), .do(r_data2_r));
-    
-    shiftLeft2     M11(.in(imm32), .out(shift_imm32));
-    
-    mux8to1_32     M12(.in0(r_data2_r), .in1(shamt), .in2(imm32), .in3(shift_imm32), .in4(32'd4), .in5(zero_imm32), .in6(), .in7(), .sel(AluSrcB), .out(alu_B));
-    
-    shiftleft2_26  M13(.di(addr26), .do(addr28));
-    
-    bit_extender_4 M14(.di_28(addr28), .pc(pc), .do_32(addr32));
-    
-    mux2to1_32     M15(.in0(pc), .in1(r_data1_r), .sel(AluSrcA), .out(alu_A));
-    
-    ALU            M16(.ALUop(aluop), .A(alu_A), .B(alu_B), .ALUResult(alu_result), .zero(zeroflag));
-    
-    reg32          M17(.di(alu_result), .ctrl(AluResult), .do(alu_result_r));
-    
-    mux8to1_32     M18(.in0(alu_result), .in1(alu_result_r), .in2(addr32), .in3(r_data1_r), .in4(), .in5(), .in6(), .in7(), .sel(PCSrc), .out(PCSrc_out));
-    
-    PC             M19(.clk(PCWrite), .nrst(nrst), .ce(ce), .newPc(PCSrc_out), .pc(pc));
-    
-    mux2to1_32     M20(.in0(pc), .in1(alu_result_r), .sel(IorD), .out(address));
-    
-    control        M21(.clk(clk), .nrst(nrst), .op(op), .func(func), 
-                    .IR(IR), .MDR(MDR), .MemtoReg(MemToReg), .RegDst(RegDst), .RegWrite(RegWrite), .RegA(RegA), .RegB(RegB), .AluSrcA(AluSrcA),
-                    .AluSrcB(AluSrcB), .ALUop(aluop), .ALUResult(AluResult), .PCSrc(PCSrc), .IorD(IorD), .PCWrite(PCWrite), .MemRead(MemRead), .MemWrite(MemWrite));
-    
+    decoder3to8     M5(.a2(addr[13]), .a1(addr[12]), .a0(addr[11]), .e1(1'b1), .ne2(1'b0), .ne3(1'b0), .y0(nce_rom), .y1(nce_ram), .y2(nce_outputModule), .y3(), .y4(), .y5(), .y6(), .y7());
     
 
 

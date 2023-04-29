@@ -1,0 +1,100 @@
+module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
+    input   a2, a1, a0, e1, ne2, ne3;
+    output  y0, y1, y2, y3, y4, y5, y6, y7;
+    
+    wire enable;
+    
+    assign enable = e1 & (~ne2) & (~ne3);
+    
+    reg     y0, y1, y2, y3, y4, y5, y6, y7;
+    
+    
+    always @ (*) begin
+        if (enable == 1'b1) begin
+            if ({a2, a1, a0} == 3'b000) begin
+                assign y0 = 1'b0;
+                assign y1 = 1'b1;
+                assign y2 = 1'b1;
+                assign y3 = 1'b1;
+                assign y4 = 1'b1;
+                assign y5 = 1'b1;
+                assign y6 = 1'b1;
+                assign y7 = 1'b1;
+            end 
+            
+            if ({a2, a1, a0} == 3'b001) begin
+                assign y0 = 1'b1;
+                assign y1 = 1'b0;
+                assign y2 = 1'b1;
+                assign y3 = 1'b1;
+                assign y4 = 1'b1;
+                assign y5 = 1'b1;
+                assign y6 = 1'b1;
+                assign y7 = 1'b1;
+            end
+            if ({a2, a1, a0} == 3'b010) begin
+                assign y0 = 1'b1;
+                assign y1 = 1'b1;
+                assign y2 = 1'b0;
+                assign y3 = 1'b1;
+                assign y4 = 1'b1;
+                assign y5 = 1'b1;
+                assign y6 = 1'b1;
+                assign y7 = 1'b1;
+            end
+            if ({a2, a1, a0} == 3'b011) begin
+                assign y0 = 1'b1;
+                assign y1 = 1'b1;
+                assign y2 = 1'b1;
+                assign y3 = 1'b0;
+                assign y4 = 1'b1;
+                assign y5 = 1'b1;
+                assign y6 = 1'b1;
+                assign y7 = 1'b1;
+            end
+            if ({a2, a1, a0} == 3'b100) begin
+                assign y0 = 1'b1;
+                assign y1 = 1'b1;
+                assign y2 = 1'b1;
+                assign y3 = 1'b1;
+                assign y4 = 1'b0;
+                assign y5 = 1'b1;
+                assign y6 = 1'b1;
+                assign y7 = 1'b1;
+            end
+            if ({a2, a1, a0} == 3'b101) begin
+                assign y0 = 1'b1;
+                assign y1 = 1'b1;
+                assign y2 = 1'b1;
+                assign y3 = 1'b1;
+                assign y4 = 1'b1;
+                assign y5 = 1'b0;
+                assign y6 = 1'b1;
+                assign y7 = 1'b1;
+            end
+            if ({a2, a1, a0} == 3'b110) begin
+                assign y0 = 1'b1;
+                assign y1 = 1'b1;
+                assign y2 = 1'b1;
+                assign y3 = 1'b1;
+                assign y4 = 1'b1;
+                assign y5 = 1'b1;
+                assign y6 = 1'b0;
+                assign y7 = 1'b1;
+            end
+            if ({a2, a1, a0} == 3'b111) begin
+                assign y0 = 1'b1;
+                assign y1 = 1'b1;
+                assign y2 = 1'b1;
+                assign y3 = 1'b1;
+                assign y4 = 1'b1;
+                assign y5 = 1'b1;
+                assign y6 = 1'b1;
+                assign y7 = 1'b0;
+            end
+        end
+    end
+
+endmodule
+
+

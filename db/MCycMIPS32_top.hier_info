@@ -1,5 +1,5 @@
 |MCycMIPS32_top
-clk => clk.IN1
+clk => clk.IN3
 nrst => nrst.IN2
 MAX10_CLK1_50 => ~NO_FANOUT~
 KEY[0] => ~NO_FANOUT~
@@ -14,67 +14,170 @@ SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
-LEDR[0] <= <GND>
-LEDR[1] <= <GND>
-LEDR[2] <= <GND>
-LEDR[3] <= <GND>
-LEDR[4] <= <GND>
-LEDR[5] <= <GND>
-LEDR[6] <= <GND>
-LEDR[7] <= <GND>
-LEDR[8] <= <GND>
-LEDR[9] <= <GND>
-HEX0[0] <= <GND>
-HEX0[1] <= <GND>
-HEX0[2] <= <GND>
-HEX0[3] <= <GND>
-HEX0[4] <= <GND>
-HEX0[5] <= <GND>
-HEX0[6] <= <GND>
-HEX0[7] <= <GND>
-HEX1[0] <= <GND>
-HEX1[1] <= <GND>
-HEX1[2] <= <GND>
-HEX1[3] <= <GND>
-HEX1[4] <= <GND>
-HEX1[5] <= <GND>
-HEX1[6] <= <GND>
-HEX1[7] <= <GND>
-HEX2[0] <= <GND>
-HEX2[1] <= <GND>
-HEX2[2] <= <GND>
-HEX2[3] <= <GND>
-HEX2[4] <= <GND>
-HEX2[5] <= <GND>
-HEX2[6] <= <GND>
-HEX2[7] <= <GND>
-HEX3[0] <= <GND>
-HEX3[1] <= <GND>
-HEX3[2] <= <GND>
-HEX3[3] <= <GND>
-HEX3[4] <= <GND>
-HEX3[5] <= <GND>
-HEX3[6] <= <GND>
-HEX3[7] <= <GND>
-HEX4[0] <= <GND>
-HEX4[1] <= <GND>
-HEX4[2] <= <GND>
-HEX4[3] <= <GND>
-HEX4[4] <= <GND>
-HEX4[5] <= <GND>
-HEX4[6] <= <GND>
-HEX4[7] <= <GND>
-HEX5[0] <= <GND>
-HEX5[1] <= <GND>
-HEX5[2] <= <GND>
-HEX5[3] <= <GND>
-HEX5[4] <= <GND>
-HEX5[5] <= <GND>
-HEX5[6] <= <GND>
-HEX5[7] <= <GND>
+LEDR[0] << outputModule:M4.pins
+LEDR[1] << outputModule:M4.pins
+LEDR[2] << outputModule:M4.pins
+LEDR[3] << outputModule:M4.pins
+LEDR[4] << outputModule:M4.pins
+LEDR[5] << outputModule:M4.pins
+LEDR[6] << outputModule:M4.pins
+LEDR[7] << outputModule:M4.pins
+LEDR[8] << outputModule:M4.pins
+LEDR[9] << outputModule:M4.pins
+HEX0[0] << <GND>
+HEX0[1] << <GND>
+HEX0[2] << <GND>
+HEX0[3] << <GND>
+HEX0[4] << <GND>
+HEX0[5] << <GND>
+HEX0[6] << <GND>
+HEX0[7] << <GND>
+HEX1[0] << <GND>
+HEX1[1] << <GND>
+HEX1[2] << <GND>
+HEX1[3] << <GND>
+HEX1[4] << <GND>
+HEX1[5] << <GND>
+HEX1[6] << <GND>
+HEX1[7] << <GND>
+HEX2[0] << <GND>
+HEX2[1] << <GND>
+HEX2[2] << <GND>
+HEX2[3] << <GND>
+HEX2[4] << <GND>
+HEX2[5] << <GND>
+HEX2[6] << <GND>
+HEX2[7] << <GND>
+HEX3[0] << <GND>
+HEX3[1] << <GND>
+HEX3[2] << <GND>
+HEX3[3] << <GND>
+HEX3[4] << <GND>
+HEX3[5] << <GND>
+HEX3[6] << <GND>
+HEX3[7] << <GND>
+HEX4[0] << <GND>
+HEX4[1] << <GND>
+HEX4[2] << <GND>
+HEX4[3] << <GND>
+HEX4[4] << <GND>
+HEX4[5] << <GND>
+HEX4[6] << <GND>
+HEX4[7] << <GND>
+HEX5[0] << <GND>
+HEX5[1] << <GND>
+HEX5[2] << <GND>
+HEX5[3] << <GND>
+HEX5[4] << <GND>
+HEX5[5] << <GND>
+HEX5[6] << <GND>
+HEX5[7] << <GND>
 
 
-|MCycMIPS32_top|reg32:M1
+|MCycMIPS32_top|MIPS32:M1
+clk => clk.IN1
+nrst => nrst.IN2
+MemWrite => MemWrite.IN1
+MemRead => MemRead.IN1
+data_in[0] => ~NO_FANOUT~
+data_in[1] => ~NO_FANOUT~
+data_in[2] => ~NO_FANOUT~
+data_in[3] => ~NO_FANOUT~
+data_in[4] => ~NO_FANOUT~
+data_in[5] => ~NO_FANOUT~
+data_in[6] => ~NO_FANOUT~
+data_in[7] => ~NO_FANOUT~
+data_in[8] => ~NO_FANOUT~
+data_in[9] => ~NO_FANOUT~
+data_in[10] => ~NO_FANOUT~
+data_in[11] => ~NO_FANOUT~
+data_in[12] => ~NO_FANOUT~
+data_in[13] => ~NO_FANOUT~
+data_in[14] => ~NO_FANOUT~
+data_in[15] => ~NO_FANOUT~
+data_in[16] => ~NO_FANOUT~
+data_in[17] => ~NO_FANOUT~
+data_in[18] => ~NO_FANOUT~
+data_in[19] => ~NO_FANOUT~
+data_in[20] => ~NO_FANOUT~
+data_in[21] => ~NO_FANOUT~
+data_in[22] => ~NO_FANOUT~
+data_in[23] => ~NO_FANOUT~
+data_in[24] => ~NO_FANOUT~
+data_in[25] => ~NO_FANOUT~
+data_in[26] => ~NO_FANOUT~
+data_in[27] => ~NO_FANOUT~
+data_in[28] => ~NO_FANOUT~
+data_in[29] => ~NO_FANOUT~
+data_in[30] => ~NO_FANOUT~
+data_in[31] => ~NO_FANOUT~
+address[0] <= mux2to1_32:M20.out
+address[1] <= mux2to1_32:M20.out
+address[2] <= mux2to1_32:M20.out
+address[3] <= mux2to1_32:M20.out
+address[4] <= mux2to1_32:M20.out
+address[5] <= mux2to1_32:M20.out
+address[6] <= mux2to1_32:M20.out
+address[7] <= mux2to1_32:M20.out
+address[8] <= mux2to1_32:M20.out
+address[9] <= mux2to1_32:M20.out
+address[10] <= mux2to1_32:M20.out
+address[11] <= mux2to1_32:M20.out
+address[12] <= mux2to1_32:M20.out
+address[13] <= mux2to1_32:M20.out
+address[14] <= mux2to1_32:M20.out
+address[15] <= mux2to1_32:M20.out
+address[16] <= mux2to1_32:M20.out
+address[17] <= mux2to1_32:M20.out
+address[18] <= mux2to1_32:M20.out
+address[19] <= mux2to1_32:M20.out
+address[20] <= mux2to1_32:M20.out
+address[21] <= mux2to1_32:M20.out
+address[22] <= mux2to1_32:M20.out
+address[23] <= mux2to1_32:M20.out
+address[24] <= mux2to1_32:M20.out
+address[25] <= mux2to1_32:M20.out
+address[26] <= mux2to1_32:M20.out
+address[27] <= mux2to1_32:M20.out
+address[28] <= mux2to1_32:M20.out
+address[29] <= mux2to1_32:M20.out
+address[30] <= mux2to1_32:M20.out
+address[31] <= mux2to1_32:M20.out
+data_out[0] <= <GND>
+data_out[1] <= <GND>
+data_out[2] <= <GND>
+data_out[3] <= <GND>
+data_out[4] <= <GND>
+data_out[5] <= <GND>
+data_out[6] <= <GND>
+data_out[7] <= <GND>
+data_out[8] <= <GND>
+data_out[9] <= <GND>
+data_out[10] <= <GND>
+data_out[11] <= <GND>
+data_out[12] <= <GND>
+data_out[13] <= <GND>
+data_out[14] <= <GND>
+data_out[15] <= <GND>
+data_out[16] <= <GND>
+data_out[17] <= <GND>
+data_out[18] <= <GND>
+data_out[19] <= <GND>
+data_out[20] <= <GND>
+data_out[21] <= <GND>
+data_out[22] <= <GND>
+data_out[23] <= <GND>
+data_out[24] <= <GND>
+data_out[25] <= <GND>
+data_out[26] <= <GND>
+data_out[27] <= <GND>
+data_out[28] <= <GND>
+data_out[29] <= <GND>
+data_out[30] <= <GND>
+data_out[31] <= <GND>
+
+
+|MCycMIPS32_top|MIPS32:M1|reg32:M1
 di[0] => do[0]$latch.DATAIN
 di[1] => do[1]$latch.DATAIN
 di[2] => do[2]$latch.DATAIN
@@ -173,7 +276,7 @@ do[30] <= do[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 do[31] <= do[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|reg32:M2
+|MCycMIPS32_top|MIPS32:M1|reg32:M2
 di[0] => do[0]$latch.DATAIN
 di[1] => do[1]$latch.DATAIN
 di[2] => do[2]$latch.DATAIN
@@ -272,7 +375,7 @@ do[30] <= do[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 do[31] <= do[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|ID:M3
+|MCycMIPS32_top|MIPS32:M1|ID:M3
 instr[0] => address[0].DATAIN
 instr[0] => func[0].DATAIN
 instr[0] => imm16[0].DATAIN
@@ -423,7 +526,7 @@ address[24] <= instr[24].DB_MAX_OUTPUT_PORT_TYPE
 address[25] <= instr[25].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|mux2to1_32:M4
+|MCycMIPS32_top|MIPS32:M1|mux2to1_32:M4
 in0[0] => out.DATAB
 in0[1] => out.DATAB
 in0[2] => out.DATAB
@@ -554,7 +657,7 @@ out[30] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[31] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|mux2to1_32:M5
+|MCycMIPS32_top|MIPS32:M1|mux2to1_32:M5
 in0[0] => out.DATAB
 in0[1] => out.DATAB
 in0[2] => out.DATAB
@@ -685,7 +788,7 @@ out[30] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[31] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|RegisterFile:M6
+|MCycMIPS32_top|MIPS32:M1|RegisterFile:M6
 ReadReg1[0] => registers.RADDR
 ReadReg1[0] => Equal0.IN4
 ReadReg1[1] => registers.RADDR1
@@ -815,7 +918,7 @@ ReadData2[31] <= ReadData2.DB_MAX_OUTPUT_PORT_TYPE
 RegWrite => always0.IN1
 
 
-|MCycMIPS32_top|signext:M7
+|MCycMIPS32_top|MIPS32:M1|signext:M7
 imm16[0] => imm32[0].DATAIN
 imm16[1] => imm32[1].DATAIN
 imm16[2] => imm32[2].DATAIN
@@ -882,7 +985,7 @@ imm32[30] <= imm16[15].DB_MAX_OUTPUT_PORT_TYPE
 imm32[31] <= imm16[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|zeroExtImm:M8
+|MCycMIPS32_top|MIPS32:M1|zeroExtImm:M8
 in[0] => out[0].DATAIN
 in[1] => out[1].DATAIN
 in[2] => out[2].DATAIN
@@ -933,7 +1036,7 @@ out[30] <= <GND>
 out[31] <= <GND>
 
 
-|MCycMIPS32_top|reg32:M9
+|MCycMIPS32_top|MIPS32:M1|reg32:M9
 di[0] => do[0]$latch.DATAIN
 di[1] => do[1]$latch.DATAIN
 di[2] => do[2]$latch.DATAIN
@@ -1032,7 +1135,7 @@ do[30] <= do[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 do[31] <= do[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|reg32:M10
+|MCycMIPS32_top|MIPS32:M1|reg32:M10
 di[0] => do[0]$latch.DATAIN
 di[1] => do[1]$latch.DATAIN
 di[2] => do[2]$latch.DATAIN
@@ -1131,7 +1234,7 @@ do[30] <= do[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 do[31] <= do[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|shiftLeft2:M11
+|MCycMIPS32_top|MIPS32:M1|shiftLeft2:M11
 in[0] => out[2].DATAIN
 in[1] => out[3].DATAIN
 in[2] => out[4].DATAIN
@@ -1198,7 +1301,7 @@ out[30] <= in[28].DB_MAX_OUTPUT_PORT_TYPE
 out[31] <= in[29].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|mux8to1_32:M12
+|MCycMIPS32_top|MIPS32:M1|mux8to1_32:M12
 in0[0] => Mux0.IN3
 in0[1] => Mux1.IN3
 in0[2] => Mux2.IN3
@@ -1588,7 +1691,7 @@ out[30] <= out[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[31] <= out[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|shiftleft2_26:M13
+|MCycMIPS32_top|MIPS32:M1|shiftleft2_26:M13
 di[0] => do[2].DATAIN
 di[1] => do[3].DATAIN
 di[2] => do[4].DATAIN
@@ -1645,7 +1748,7 @@ do[26] <= di[24].DB_MAX_OUTPUT_PORT_TYPE
 do[27] <= di[25].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|bit_extender_4:M14
+|MCycMIPS32_top|MIPS32:M1|bit_extender_4:M14
 di_28[0] => do_32[0].DATAIN
 di_28[1] => do_32[1].DATAIN
 di_28[2] => do_32[2].DATAIN
@@ -1740,7 +1843,7 @@ do_32[30] <= pc[30].DB_MAX_OUTPUT_PORT_TYPE
 do_32[31] <= pc[31].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|mux2to1_32:M15
+|MCycMIPS32_top|MIPS32:M1|mux2to1_32:M15
 in0[0] => out.DATAB
 in0[1] => out.DATAB
 in0[2] => out.DATAB
@@ -1871,7 +1974,7 @@ out[30] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[31] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|ALU:M16
+|MCycMIPS32_top|MIPS32:M1|ALU:M16
 ALUop[0] => Mux0.IN19
 ALUop[0] => Mux1.IN19
 ALUop[0] => Mux2.IN19
@@ -2419,7 +2522,7 @@ ALUResult[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 zero <= <GND>
 
 
-|MCycMIPS32_top|reg32:M17
+|MCycMIPS32_top|MIPS32:M1|reg32:M17
 di[0] => do[0]$latch.DATAIN
 di[1] => do[1]$latch.DATAIN
 di[2] => do[2]$latch.DATAIN
@@ -2518,7 +2621,7 @@ do[30] <= do[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 do[31] <= do[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|mux8to1_32:M18
+|MCycMIPS32_top|MIPS32:M1|mux8to1_32:M18
 in0[0] => Mux0.IN3
 in0[1] => Mux1.IN3
 in0[2] => Mux2.IN3
@@ -2908,7 +3011,7 @@ out[30] <= out[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[31] <= out[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|PC:M19
+|MCycMIPS32_top|MIPS32:M1|PC:M19
 clk => ce~reg0.CLK
 clk => pc[0]~reg0.CLK
 clk => pc[1]~reg0.CLK
@@ -3010,7 +3113,7 @@ pc[30] <= pc[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pc[31] <= pc[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|mux2to1_32:M20
+|MCycMIPS32_top|MIPS32:M1|mux2to1_32:M20
 in0[0] => out.DATAB
 in0[1] => out.DATAB
 in0[2] => out.DATAB
@@ -3141,7 +3244,7 @@ out[30] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[31] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MCycMIPS32_top|control:M21
+|MCycMIPS32_top|MIPS32:M1|control:M21
 clk => currState~1.DATAIN
 nrst => currState~3.DATAIN
 op[0] => Equal0.IN5
@@ -3202,5 +3305,576 @@ IorD <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
 PCWrite <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
 MemRead <= MemRead.DB_MAX_OUTPUT_PORT_TYPE
 MemWrite <= MemWrite.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MCycMIPS32_top|rom:M2
+nrst => ~NO_FANOUT~
+nce => d_out.IN0
+re => d_out.IN1
+addr[0] => Mux0.IN517
+addr[0] => Mux1.IN517
+addr[0] => Mux2.IN517
+addr[0] => Mux3.IN517
+addr[0] => Mux4.IN517
+addr[0] => Mux5.IN517
+addr[0] => Mux6.IN517
+addr[0] => Mux7.IN517
+addr[0] => Mux8.IN517
+addr[0] => Mux9.IN517
+addr[0] => Mux10.IN517
+addr[0] => Mux11.IN517
+addr[0] => Mux12.IN517
+addr[0] => Mux13.IN517
+addr[0] => Mux14.IN517
+addr[0] => Mux15.IN517
+addr[0] => Mux16.IN517
+addr[0] => Mux17.IN517
+addr[0] => Mux18.IN517
+addr[0] => Mux19.IN517
+addr[0] => Mux20.IN517
+addr[0] => Mux21.IN517
+addr[0] => Mux22.IN517
+addr[0] => Mux23.IN517
+addr[0] => Mux24.IN517
+addr[0] => Mux25.IN517
+addr[0] => Mux26.IN517
+addr[0] => Mux27.IN517
+addr[0] => Mux28.IN517
+addr[0] => Mux29.IN517
+addr[0] => Mux30.IN517
+addr[0] => Mux31.IN517
+addr[1] => Mux0.IN516
+addr[1] => Mux1.IN516
+addr[1] => Mux2.IN516
+addr[1] => Mux3.IN516
+addr[1] => Mux4.IN516
+addr[1] => Mux5.IN516
+addr[1] => Mux6.IN516
+addr[1] => Mux7.IN516
+addr[1] => Mux8.IN516
+addr[1] => Mux9.IN516
+addr[1] => Mux10.IN516
+addr[1] => Mux11.IN516
+addr[1] => Mux12.IN516
+addr[1] => Mux13.IN516
+addr[1] => Mux14.IN516
+addr[1] => Mux15.IN516
+addr[1] => Mux16.IN516
+addr[1] => Mux17.IN516
+addr[1] => Mux18.IN516
+addr[1] => Mux19.IN516
+addr[1] => Mux20.IN516
+addr[1] => Mux21.IN516
+addr[1] => Mux22.IN516
+addr[1] => Mux23.IN516
+addr[1] => Mux24.IN516
+addr[1] => Mux25.IN516
+addr[1] => Mux26.IN516
+addr[1] => Mux27.IN516
+addr[1] => Mux28.IN516
+addr[1] => Mux29.IN516
+addr[1] => Mux30.IN516
+addr[1] => Mux31.IN516
+addr[2] => Mux0.IN515
+addr[2] => Mux1.IN515
+addr[2] => Mux2.IN515
+addr[2] => Mux3.IN515
+addr[2] => Mux4.IN515
+addr[2] => Mux5.IN515
+addr[2] => Mux6.IN515
+addr[2] => Mux7.IN515
+addr[2] => Mux8.IN515
+addr[2] => Mux9.IN515
+addr[2] => Mux10.IN515
+addr[2] => Mux11.IN515
+addr[2] => Mux12.IN515
+addr[2] => Mux13.IN515
+addr[2] => Mux14.IN515
+addr[2] => Mux15.IN515
+addr[2] => Mux16.IN515
+addr[2] => Mux17.IN515
+addr[2] => Mux18.IN515
+addr[2] => Mux19.IN515
+addr[2] => Mux20.IN515
+addr[2] => Mux21.IN515
+addr[2] => Mux22.IN515
+addr[2] => Mux23.IN515
+addr[2] => Mux24.IN515
+addr[2] => Mux25.IN515
+addr[2] => Mux26.IN515
+addr[2] => Mux27.IN515
+addr[2] => Mux28.IN515
+addr[2] => Mux29.IN515
+addr[2] => Mux30.IN515
+addr[2] => Mux31.IN515
+addr[3] => Mux0.IN514
+addr[3] => Mux1.IN514
+addr[3] => Mux2.IN514
+addr[3] => Mux3.IN514
+addr[3] => Mux4.IN514
+addr[3] => Mux5.IN514
+addr[3] => Mux6.IN514
+addr[3] => Mux7.IN514
+addr[3] => Mux8.IN514
+addr[3] => Mux9.IN514
+addr[3] => Mux10.IN514
+addr[3] => Mux11.IN514
+addr[3] => Mux12.IN514
+addr[3] => Mux13.IN514
+addr[3] => Mux14.IN514
+addr[3] => Mux15.IN514
+addr[3] => Mux16.IN514
+addr[3] => Mux17.IN514
+addr[3] => Mux18.IN514
+addr[3] => Mux19.IN514
+addr[3] => Mux20.IN514
+addr[3] => Mux21.IN514
+addr[3] => Mux22.IN514
+addr[3] => Mux23.IN514
+addr[3] => Mux24.IN514
+addr[3] => Mux25.IN514
+addr[3] => Mux26.IN514
+addr[3] => Mux27.IN514
+addr[3] => Mux28.IN514
+addr[3] => Mux29.IN514
+addr[3] => Mux30.IN514
+addr[3] => Mux31.IN514
+addr[4] => Mux0.IN513
+addr[4] => Mux1.IN513
+addr[4] => Mux2.IN513
+addr[4] => Mux3.IN513
+addr[4] => Mux4.IN513
+addr[4] => Mux5.IN513
+addr[4] => Mux6.IN513
+addr[4] => Mux7.IN513
+addr[4] => Mux8.IN513
+addr[4] => Mux9.IN513
+addr[4] => Mux10.IN513
+addr[4] => Mux11.IN513
+addr[4] => Mux12.IN513
+addr[4] => Mux13.IN513
+addr[4] => Mux14.IN513
+addr[4] => Mux15.IN513
+addr[4] => Mux16.IN513
+addr[4] => Mux17.IN513
+addr[4] => Mux18.IN513
+addr[4] => Mux19.IN513
+addr[4] => Mux20.IN513
+addr[4] => Mux21.IN513
+addr[4] => Mux22.IN513
+addr[4] => Mux23.IN513
+addr[4] => Mux24.IN513
+addr[4] => Mux25.IN513
+addr[4] => Mux26.IN513
+addr[4] => Mux27.IN513
+addr[4] => Mux28.IN513
+addr[4] => Mux29.IN513
+addr[4] => Mux30.IN513
+addr[4] => Mux31.IN513
+addr[5] => Mux0.IN512
+addr[5] => Mux1.IN512
+addr[5] => Mux2.IN512
+addr[5] => Mux3.IN512
+addr[5] => Mux4.IN512
+addr[5] => Mux5.IN512
+addr[5] => Mux6.IN512
+addr[5] => Mux7.IN512
+addr[5] => Mux8.IN512
+addr[5] => Mux9.IN512
+addr[5] => Mux10.IN512
+addr[5] => Mux11.IN512
+addr[5] => Mux12.IN512
+addr[5] => Mux13.IN512
+addr[5] => Mux14.IN512
+addr[5] => Mux15.IN512
+addr[5] => Mux16.IN512
+addr[5] => Mux17.IN512
+addr[5] => Mux18.IN512
+addr[5] => Mux19.IN512
+addr[5] => Mux20.IN512
+addr[5] => Mux21.IN512
+addr[5] => Mux22.IN512
+addr[5] => Mux23.IN512
+addr[5] => Mux24.IN512
+addr[5] => Mux25.IN512
+addr[5] => Mux26.IN512
+addr[5] => Mux27.IN512
+addr[5] => Mux28.IN512
+addr[5] => Mux29.IN512
+addr[5] => Mux30.IN512
+addr[5] => Mux31.IN512
+addr[6] => Mux0.IN511
+addr[6] => Mux1.IN511
+addr[6] => Mux2.IN511
+addr[6] => Mux3.IN511
+addr[6] => Mux4.IN511
+addr[6] => Mux5.IN511
+addr[6] => Mux6.IN511
+addr[6] => Mux7.IN511
+addr[6] => Mux8.IN511
+addr[6] => Mux9.IN511
+addr[6] => Mux10.IN511
+addr[6] => Mux11.IN511
+addr[6] => Mux12.IN511
+addr[6] => Mux13.IN511
+addr[6] => Mux14.IN511
+addr[6] => Mux15.IN511
+addr[6] => Mux16.IN511
+addr[6] => Mux17.IN511
+addr[6] => Mux18.IN511
+addr[6] => Mux19.IN511
+addr[6] => Mux20.IN511
+addr[6] => Mux21.IN511
+addr[6] => Mux22.IN511
+addr[6] => Mux23.IN511
+addr[6] => Mux24.IN511
+addr[6] => Mux25.IN511
+addr[6] => Mux26.IN511
+addr[6] => Mux27.IN511
+addr[6] => Mux28.IN511
+addr[6] => Mux29.IN511
+addr[6] => Mux30.IN511
+addr[6] => Mux31.IN511
+addr[7] => Mux0.IN510
+addr[7] => Mux1.IN510
+addr[7] => Mux2.IN510
+addr[7] => Mux3.IN510
+addr[7] => Mux4.IN510
+addr[7] => Mux5.IN510
+addr[7] => Mux6.IN510
+addr[7] => Mux7.IN510
+addr[7] => Mux8.IN510
+addr[7] => Mux9.IN510
+addr[7] => Mux10.IN510
+addr[7] => Mux11.IN510
+addr[7] => Mux12.IN510
+addr[7] => Mux13.IN510
+addr[7] => Mux14.IN510
+addr[7] => Mux15.IN510
+addr[7] => Mux16.IN510
+addr[7] => Mux17.IN510
+addr[7] => Mux18.IN510
+addr[7] => Mux19.IN510
+addr[7] => Mux20.IN510
+addr[7] => Mux21.IN510
+addr[7] => Mux22.IN510
+addr[7] => Mux23.IN510
+addr[7] => Mux24.IN510
+addr[7] => Mux25.IN510
+addr[7] => Mux26.IN510
+addr[7] => Mux27.IN510
+addr[7] => Mux28.IN510
+addr[7] => Mux29.IN510
+addr[7] => Mux30.IN510
+addr[7] => Mux31.IN510
+addr[8] => Mux0.IN509
+addr[8] => Mux1.IN509
+addr[8] => Mux2.IN509
+addr[8] => Mux3.IN509
+addr[8] => Mux4.IN509
+addr[8] => Mux5.IN509
+addr[8] => Mux6.IN509
+addr[8] => Mux7.IN509
+addr[8] => Mux8.IN509
+addr[8] => Mux9.IN509
+addr[8] => Mux10.IN509
+addr[8] => Mux11.IN509
+addr[8] => Mux12.IN509
+addr[8] => Mux13.IN509
+addr[8] => Mux14.IN509
+addr[8] => Mux15.IN509
+addr[8] => Mux16.IN509
+addr[8] => Mux17.IN509
+addr[8] => Mux18.IN509
+addr[8] => Mux19.IN509
+addr[8] => Mux20.IN509
+addr[8] => Mux21.IN509
+addr[8] => Mux22.IN509
+addr[8] => Mux23.IN509
+addr[8] => Mux24.IN509
+addr[8] => Mux25.IN509
+addr[8] => Mux26.IN509
+addr[8] => Mux27.IN509
+addr[8] => Mux28.IN509
+addr[8] => Mux29.IN509
+addr[8] => Mux30.IN509
+addr[8] => Mux31.IN509
+d_out[0] <= d_out[0].DB_MAX_OUTPUT_PORT_TYPE
+d_out[1] <= d_out[1].DB_MAX_OUTPUT_PORT_TYPE
+d_out[2] <= d_out[2].DB_MAX_OUTPUT_PORT_TYPE
+d_out[3] <= d_out[3].DB_MAX_OUTPUT_PORT_TYPE
+d_out[4] <= d_out[4].DB_MAX_OUTPUT_PORT_TYPE
+d_out[5] <= d_out[5].DB_MAX_OUTPUT_PORT_TYPE
+d_out[6] <= d_out[6].DB_MAX_OUTPUT_PORT_TYPE
+d_out[7] <= d_out[7].DB_MAX_OUTPUT_PORT_TYPE
+d_out[8] <= d_out[8].DB_MAX_OUTPUT_PORT_TYPE
+d_out[9] <= d_out[9].DB_MAX_OUTPUT_PORT_TYPE
+d_out[10] <= d_out[10].DB_MAX_OUTPUT_PORT_TYPE
+d_out[11] <= d_out[11].DB_MAX_OUTPUT_PORT_TYPE
+d_out[12] <= d_out[12].DB_MAX_OUTPUT_PORT_TYPE
+d_out[13] <= d_out[13].DB_MAX_OUTPUT_PORT_TYPE
+d_out[14] <= d_out[14].DB_MAX_OUTPUT_PORT_TYPE
+d_out[15] <= d_out[15].DB_MAX_OUTPUT_PORT_TYPE
+d_out[16] <= d_out[16].DB_MAX_OUTPUT_PORT_TYPE
+d_out[17] <= d_out[17].DB_MAX_OUTPUT_PORT_TYPE
+d_out[18] <= d_out[18].DB_MAX_OUTPUT_PORT_TYPE
+d_out[19] <= d_out[19].DB_MAX_OUTPUT_PORT_TYPE
+d_out[20] <= d_out[20].DB_MAX_OUTPUT_PORT_TYPE
+d_out[21] <= d_out[21].DB_MAX_OUTPUT_PORT_TYPE
+d_out[22] <= d_out[22].DB_MAX_OUTPUT_PORT_TYPE
+d_out[23] <= d_out[23].DB_MAX_OUTPUT_PORT_TYPE
+d_out[24] <= d_out[24].DB_MAX_OUTPUT_PORT_TYPE
+d_out[25] <= d_out[25].DB_MAX_OUTPUT_PORT_TYPE
+d_out[26] <= d_out[26].DB_MAX_OUTPUT_PORT_TYPE
+d_out[27] <= d_out[27].DB_MAX_OUTPUT_PORT_TYPE
+d_out[28] <= d_out[28].DB_MAX_OUTPUT_PORT_TYPE
+d_out[29] <= d_out[29].DB_MAX_OUTPUT_PORT_TYPE
+d_out[30] <= d_out[30].DB_MAX_OUTPUT_PORT_TYPE
+d_out[31] <= d_out[31].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MCycMIPS32_top|ram:M3
+clk => mem.we_a.CLK
+clk => mem.waddr_a[8].CLK
+clk => mem.waddr_a[7].CLK
+clk => mem.waddr_a[6].CLK
+clk => mem.waddr_a[5].CLK
+clk => mem.waddr_a[4].CLK
+clk => mem.waddr_a[3].CLK
+clk => mem.waddr_a[2].CLK
+clk => mem.waddr_a[1].CLK
+clk => mem.waddr_a[0].CLK
+clk => mem.data_a[31].CLK
+clk => mem.data_a[30].CLK
+clk => mem.data_a[29].CLK
+clk => mem.data_a[28].CLK
+clk => mem.data_a[27].CLK
+clk => mem.data_a[26].CLK
+clk => mem.data_a[25].CLK
+clk => mem.data_a[24].CLK
+clk => mem.data_a[23].CLK
+clk => mem.data_a[22].CLK
+clk => mem.data_a[21].CLK
+clk => mem.data_a[20].CLK
+clk => mem.data_a[19].CLK
+clk => mem.data_a[18].CLK
+clk => mem.data_a[17].CLK
+clk => mem.data_a[16].CLK
+clk => mem.data_a[15].CLK
+clk => mem.data_a[14].CLK
+clk => mem.data_a[13].CLK
+clk => mem.data_a[12].CLK
+clk => mem.data_a[11].CLK
+clk => mem.data_a[10].CLK
+clk => mem.data_a[9].CLK
+clk => mem.data_a[8].CLK
+clk => mem.data_a[7].CLK
+clk => mem.data_a[6].CLK
+clk => mem.data_a[5].CLK
+clk => mem.data_a[4].CLK
+clk => mem.data_a[3].CLK
+clk => mem.data_a[2].CLK
+clk => mem.data_a[1].CLK
+clk => mem.data_a[0].CLK
+clk => mem.CLK0
+nce => d_out.IN0
+nce => always0.IN0
+re => d_out.IN1
+we => always0.IN1
+addr[0] => mem.waddr_a[0].DATAIN
+addr[0] => mem.WADDR
+addr[0] => mem.RADDR
+addr[0] => mem.PORTBRADDR
+addr[1] => mem.waddr_a[1].DATAIN
+addr[1] => mem.WADDR1
+addr[1] => mem.RADDR1
+addr[1] => mem.PORTBRADDR1
+addr[2] => mem.waddr_a[2].DATAIN
+addr[2] => mem.WADDR2
+addr[2] => mem.RADDR2
+addr[2] => mem.PORTBRADDR2
+addr[3] => mem.waddr_a[3].DATAIN
+addr[3] => mem.WADDR3
+addr[3] => mem.RADDR3
+addr[3] => mem.PORTBRADDR3
+addr[4] => mem.waddr_a[4].DATAIN
+addr[4] => mem.WADDR4
+addr[4] => mem.RADDR4
+addr[4] => mem.PORTBRADDR4
+addr[5] => mem.waddr_a[5].DATAIN
+addr[5] => mem.WADDR5
+addr[5] => mem.RADDR5
+addr[5] => mem.PORTBRADDR5
+addr[6] => mem.waddr_a[6].DATAIN
+addr[6] => mem.WADDR6
+addr[6] => mem.RADDR6
+addr[6] => mem.PORTBRADDR6
+addr[7] => mem.waddr_a[7].DATAIN
+addr[7] => mem.WADDR7
+addr[7] => mem.RADDR7
+addr[7] => mem.PORTBRADDR7
+addr[8] => mem.waddr_a[8].DATAIN
+addr[8] => mem.WADDR8
+addr[8] => mem.RADDR8
+addr[8] => mem.PORTBRADDR8
+d_in[0] => mem.DATAB
+d_in[1] => mem.DATAB
+d_in[2] => mem.DATAB
+d_in[3] => mem.DATAB
+d_in[4] => mem.DATAB
+d_in[5] => mem.DATAB
+d_in[6] => mem.DATAB
+d_in[7] => mem.DATAB
+d_in[8] => mem.DATAB
+d_in[9] => mem.DATAB
+d_in[10] => mem.DATAB
+d_in[11] => mem.DATAB
+d_in[12] => mem.DATAB
+d_in[13] => mem.DATAB
+d_in[14] => mem.DATAB
+d_in[15] => mem.DATAB
+d_in[16] => mem.DATAB
+d_in[17] => mem.DATAB
+d_in[18] => mem.DATAB
+d_in[19] => mem.DATAB
+d_in[20] => mem.DATAB
+d_in[21] => mem.DATAB
+d_in[22] => mem.DATAB
+d_in[23] => mem.DATAB
+d_in[24] => mem.DATAB
+d_in[25] => mem.DATAB
+d_in[26] => mem.DATAB
+d_in[27] => mem.DATAB
+d_in[28] => mem.DATAB
+d_in[29] => mem.DATAB
+d_in[30] => mem.DATAB
+d_in[31] => mem.DATAB
+d_out[0] <= d_out[0].DB_MAX_OUTPUT_PORT_TYPE
+d_out[1] <= d_out[1].DB_MAX_OUTPUT_PORT_TYPE
+d_out[2] <= d_out[2].DB_MAX_OUTPUT_PORT_TYPE
+d_out[3] <= d_out[3].DB_MAX_OUTPUT_PORT_TYPE
+d_out[4] <= d_out[4].DB_MAX_OUTPUT_PORT_TYPE
+d_out[5] <= d_out[5].DB_MAX_OUTPUT_PORT_TYPE
+d_out[6] <= d_out[6].DB_MAX_OUTPUT_PORT_TYPE
+d_out[7] <= d_out[7].DB_MAX_OUTPUT_PORT_TYPE
+d_out[8] <= d_out[8].DB_MAX_OUTPUT_PORT_TYPE
+d_out[9] <= d_out[9].DB_MAX_OUTPUT_PORT_TYPE
+d_out[10] <= d_out[10].DB_MAX_OUTPUT_PORT_TYPE
+d_out[11] <= d_out[11].DB_MAX_OUTPUT_PORT_TYPE
+d_out[12] <= d_out[12].DB_MAX_OUTPUT_PORT_TYPE
+d_out[13] <= d_out[13].DB_MAX_OUTPUT_PORT_TYPE
+d_out[14] <= d_out[14].DB_MAX_OUTPUT_PORT_TYPE
+d_out[15] <= d_out[15].DB_MAX_OUTPUT_PORT_TYPE
+d_out[16] <= d_out[16].DB_MAX_OUTPUT_PORT_TYPE
+d_out[17] <= d_out[17].DB_MAX_OUTPUT_PORT_TYPE
+d_out[18] <= d_out[18].DB_MAX_OUTPUT_PORT_TYPE
+d_out[19] <= d_out[19].DB_MAX_OUTPUT_PORT_TYPE
+d_out[20] <= d_out[20].DB_MAX_OUTPUT_PORT_TYPE
+d_out[21] <= d_out[21].DB_MAX_OUTPUT_PORT_TYPE
+d_out[22] <= d_out[22].DB_MAX_OUTPUT_PORT_TYPE
+d_out[23] <= d_out[23].DB_MAX_OUTPUT_PORT_TYPE
+d_out[24] <= d_out[24].DB_MAX_OUTPUT_PORT_TYPE
+d_out[25] <= d_out[25].DB_MAX_OUTPUT_PORT_TYPE
+d_out[26] <= d_out[26].DB_MAX_OUTPUT_PORT_TYPE
+d_out[27] <= d_out[27].DB_MAX_OUTPUT_PORT_TYPE
+d_out[28] <= d_out[28].DB_MAX_OUTPUT_PORT_TYPE
+d_out[29] <= d_out[29].DB_MAX_OUTPUT_PORT_TYPE
+d_out[30] <= d_out[30].DB_MAX_OUTPUT_PORT_TYPE
+d_out[31] <= d_out[31].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MCycMIPS32_top|outputModule:M4
+clk => pins[0]~reg0.CLK
+clk => pins[1]~reg0.CLK
+clk => pins[2]~reg0.CLK
+clk => pins[3]~reg0.CLK
+clk => pins[4]~reg0.CLK
+clk => pins[5]~reg0.CLK
+clk => pins[6]~reg0.CLK
+clk => pins[7]~reg0.CLK
+clk => pins[8]~reg0.CLK
+clk => pins[9]~reg0.CLK
+nce => always0.IN0
+we => always0.IN1
+d_in[0] => pins.DATAB
+d_in[1] => pins.DATAB
+d_in[2] => pins.DATAB
+d_in[3] => pins.DATAB
+d_in[4] => pins.DATAB
+d_in[5] => pins.DATAB
+d_in[6] => pins.DATAB
+d_in[7] => pins.DATAB
+d_in[8] => pins.DATAB
+d_in[9] => pins.DATAB
+d_in[10] => ~NO_FANOUT~
+d_in[11] => ~NO_FANOUT~
+d_in[12] => ~NO_FANOUT~
+d_in[13] => ~NO_FANOUT~
+d_in[14] => ~NO_FANOUT~
+d_in[15] => ~NO_FANOUT~
+d_in[16] => ~NO_FANOUT~
+d_in[17] => ~NO_FANOUT~
+d_in[18] => ~NO_FANOUT~
+d_in[19] => ~NO_FANOUT~
+d_in[20] => ~NO_FANOUT~
+d_in[21] => ~NO_FANOUT~
+d_in[22] => ~NO_FANOUT~
+d_in[23] => ~NO_FANOUT~
+d_in[24] => ~NO_FANOUT~
+d_in[25] => ~NO_FANOUT~
+d_in[26] => ~NO_FANOUT~
+d_in[27] => ~NO_FANOUT~
+d_in[28] => ~NO_FANOUT~
+d_in[29] => ~NO_FANOUT~
+d_in[30] => ~NO_FANOUT~
+d_in[31] => ~NO_FANOUT~
+pins[0] <= pins[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[1] <= pins[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[2] <= pins[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[3] <= pins[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[4] <= pins[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[5] <= pins[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[6] <= pins[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[7] <= pins[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[8] <= pins[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pins[9] <= pins[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MCycMIPS32_top|decoder3to8:M5
+a2 => Equal0.IN0
+a2 => Equal1.IN1
+a2 => Equal2.IN1
+a2 => Equal3.IN2
+a2 => Equal4.IN0
+a2 => Equal5.IN0
+a2 => Equal6.IN0
+a2 => Equal7.IN0
+a1 => Equal0.IN1
+a1 => Equal1.IN2
+a1 => Equal2.IN0
+a1 => Equal3.IN0
+a1 => Equal4.IN1
+a1 => Equal5.IN2
+a1 => Equal6.IN1
+a1 => Equal7.IN1
+a0 => Equal0.IN2
+a0 => Equal1.IN0
+a0 => Equal2.IN2
+a0 => Equal3.IN1
+a0 => Equal4.IN2
+a0 => Equal5.IN1
+a0 => Equal6.IN2
+a0 => Equal7.IN2
+e1 => enable.IN0
+ne2 => enable.IN1
+ne3 => enable.IN1
+y0 <= y0$latch.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= y1$latch.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= y2$latch.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= y3$latch.DB_MAX_OUTPUT_PORT_TYPE
+y4 <= y4$latch.DB_MAX_OUTPUT_PORT_TYPE
+y5 <= y5$latch.DB_MAX_OUTPUT_PORT_TYPE
+y6 <= y6$latch.DB_MAX_OUTPUT_PORT_TYPE
+y7 <= y7$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,5 +1,5 @@
 Analysis & Elaboration report for MCycMIPS32_top
-Fri Apr 28 09:18:35 2023
+Fri Apr 28 21:11:17 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -9,16 +9,18 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: control:M21
+  4. Parameter Settings for User Entity Instance: MIPS32:M1|control:M21
   5. Analysis & Elaboration Settings
-  6. Port Connectivity Checks: "control:M21"
-  7. Port Connectivity Checks: "mux2to1_32:M20"
-  8. Port Connectivity Checks: "PC:M19"
-  9. Port Connectivity Checks: "mux8to1_32:M18"
- 10. Port Connectivity Checks: "ALU:M16"
- 11. Port Connectivity Checks: "mux8to1_32:M12"
- 12. Port Connectivity Checks: "mux2to1_32:M5"
- 13. Analysis & Elaboration Messages
+  6. Port Connectivity Checks: "decoder3to8:M5"
+  7. Port Connectivity Checks: "MIPS32:M1|control:M21"
+  8. Port Connectivity Checks: "MIPS32:M1|PC:M19"
+  9. Port Connectivity Checks: "MIPS32:M1|mux8to1_32:M18"
+ 10. Port Connectivity Checks: "MIPS32:M1|ALU:M16"
+ 11. Port Connectivity Checks: "MIPS32:M1|mux8to1_32:M12"
+ 12. Port Connectivity Checks: "MIPS32:M1|mux2to1_32:M5"
+ 13. Port Connectivity Checks: "MIPS32:M1"
+ 14. Analysis & Elaboration Messages
+ 15. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -45,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                      ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Fri Apr 28 09:18:35 2023          ;
+; Analysis & Elaboration Status      ; Successful - Fri Apr 28 21:11:16 2023          ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                      ; MCycMIPS32_top                                 ;
 ; Top-level Entity Name              ; MCycMIPS32_top                                 ;
@@ -80,23 +82,23 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: control:M21 ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; S_IF           ; 0000  ; Unsigned Binary                 ;
-; S_ID           ; 0001  ; Unsigned Binary                 ;
-; S_EXE_R        ; 0010  ; Unsigned Binary                 ;
-; S_EXE_I        ; 0011  ; Unsigned Binary                 ;
-; S_EXE_BEQ      ; 0100  ; Unsigned Binary                 ;
-; S_EXE_LW       ; 0101  ; Unsigned Binary                 ;
-; S_MEM_LW       ; 0110  ; Unsigned Binary                 ;
-; S_MEM_SW       ; 0111  ; Unsigned Binary                 ;
-; S_WB_R         ; 1000  ; Unsigned Binary                 ;
-; S_WB_I         ; 1001  ; Unsigned Binary                 ;
-; S_WB_LW        ; 1010  ; Unsigned Binary                 ;
-+----------------+-------+---------------------------------+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS32:M1|control:M21 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; S_IF           ; 0000  ; Unsigned Binary                           ;
+; S_ID           ; 0001  ; Unsigned Binary                           ;
+; S_EXE_R        ; 0010  ; Unsigned Binary                           ;
+; S_EXE_I        ; 0011  ; Unsigned Binary                           ;
+; S_EXE_BEQ      ; 0100  ; Unsigned Binary                           ;
+; S_EXE_LW       ; 0101  ; Unsigned Binary                           ;
+; S_MEM_LW       ; 0110  ; Unsigned Binary                           ;
+; S_MEM_SW       ; 0111  ; Unsigned Binary                           ;
+; S_WB_R         ; 1000  ; Unsigned Binary                           ;
+; S_WB_I         ; 1001  ; Unsigned Binary                           ;
+; S_WB_LW        ; 1010  ; Unsigned Binary                           ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -186,8 +188,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
++---------------------------------------------------+
+; Port Connectivity Checks: "decoder3to8:M5"        ;
++------+--------+----------+------------------------+
+; Port ; Type   ; Severity ; Details                ;
++------+--------+----------+------------------------+
+; e1   ; Input  ; Info     ; Stuck at VCC           ;
+; ne2  ; Input  ; Info     ; Stuck at GND           ;
+; ne3  ; Input  ; Info     ; Stuck at GND           ;
+; y3   ; Output ; Info     ; Explicitly unconnected ;
+; y4   ; Output ; Info     ; Explicitly unconnected ;
+; y5   ; Output ; Info     ; Explicitly unconnected ;
+; y6   ; Output ; Info     ; Explicitly unconnected ;
+; y7   ; Output ; Info     ; Explicitly unconnected ;
++------+--------+----------+------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:M21"                                                                            ;
+; Port Connectivity Checks: "MIPS32:M1|control:M21"                                                                  ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -197,16 +215,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux2to1_32:M20"                                                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "PC:M19"                                                                             ;
+; Port Connectivity Checks: "MIPS32:M1|PC:M19"                                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -215,7 +224,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux8to1_32:M18"                                                                                                                            ;
+; Port Connectivity Checks: "MIPS32:M1|mux8to1_32:M18"                                                                                                                  ;
 +------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                                                                                     ;
 +------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -228,7 +237,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ALU:M16"                                                                            ;
+; Port Connectivity Checks: "MIPS32:M1|ALU:M16"                                                                  ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -237,7 +246,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux8to1_32:M12"                                                                                                                                    ;
+; Port Connectivity Checks: "MIPS32:M1|mux8to1_32:M12"                                                                                                                          ;
 +------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port       ; Type  ; Severity ; Details                                                                                                                                       ;
 +------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -251,7 +260,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux2to1_32:M5"                                                                                                                                ;
+; Port Connectivity Checks: "MIPS32:M1|mux2to1_32:M5"                                                                                                                      ;
 +------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                                                       ;
 +------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -261,22 +270,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS32:M1"                                                                                     ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; address[31..14] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; address[1..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Fri Apr 28 09:18:27 2023
+    Info: Processing started: Fri Apr 28 21:11:08 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MCycMIPS32 -c MCycMIPS32_top --analysis_and_elaboration
 Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Warning (10274): Verilog HDL macro warning at MyDefines.v(124): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 123 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 124
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/decoder3to8.v
+    Info (12023): Found entity 1: decoder3to8 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/outputcontrol.v
     Info (12023): Found entity 1: outputControl File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/outputControl.v Line: 4
-Warning (10274): Verilog HDL macro warning at MyDefines.v(123): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 123 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 123
-Warning (10274): Verilog HDL macro warning at MyDefines.v(124): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 123 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 124
 Info (12021): Found 0 design units, including 0 entities, in source file sourcecode/mydefines.v
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/signext.v
     Info (12023): Found entity 1: signext File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/signext.v Line: 1
@@ -290,8 +308,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file sourcec
     Info (12023): Found entity 1: mux2to1_32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/id.v
     Info (12023): Found entity 1: ID File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ID.v Line: 1
-Warning (10274): Verilog HDL macro warning at MyDefines.v(123): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 123 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 123
-Warning (10274): Verilog HDL macro warning at MyDefines.v(124): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 123 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 124
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/alu.v
     Info (12023): Found entity 1: ALU File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ALU.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/mcycmips32_top.v
@@ -311,20 +327,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file sourcec
 Warning (10463): Verilog HDL Declaration warning at shiftleft2_26.v(3): "do" is SystemVerilog-2005 keyword File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/shiftleft2_26.v
     Info (12023): Found entity 1: shiftleft2_26 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 1
-Warning (10274): Verilog HDL macro warning at MyDefines.v(123): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 123 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 123
-Warning (10274): Verilog HDL macro warning at MyDefines.v(124): overriding existing definition for macro "_OP_JR", which was defined in "SourceCode/MyDefines.v", line 123 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v Line: 124
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/control.v
     Info (12023): Found entity 1: control File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 3
-Warning (10236): Verilog HDL Implicit Net warning at MCycMIPS32_top.v(95): created implicit net for "ce" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 95
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/rom.v
+    Info (12023): Found entity 1: rom File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/ram.v
+    Info (12023): Found entity 1: ram File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ram.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/outputmodule.v
+    Info (12023): Found entity 1: outputModule File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/outputModule.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/real_reg32.v
+    Info (12023): Found entity 1: real_reg32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/real_reg32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/mips32.v
+    Info (12023): Found entity 1: MIPS32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at MIPS32.v(88): created implicit net for "ce" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 88
 Info (12127): Elaborating entity "MCycMIPS32_top" for the top level hierarchy
-Warning (10034): Output port "LEDR" at MCycMIPS32_top.v(9) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 9
 Warning (10034): Output port "HEX0" at MCycMIPS32_top.v(10) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 10
 Warning (10034): Output port "HEX1" at MCycMIPS32_top.v(11) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 11
 Warning (10034): Output port "HEX2" at MCycMIPS32_top.v(12) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 12
 Warning (10034): Output port "HEX3" at MCycMIPS32_top.v(13) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 13
 Warning (10034): Output port "HEX4" at MCycMIPS32_top.v(14) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 14
 Warning (10034): Output port "HEX5" at MCycMIPS32_top.v(15) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 15
-Info (12128): Elaborating entity "reg32" for hierarchy "reg32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 59
+Info (12128): Elaborating entity "MIPS32" for hierarchy "MIPS32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 26
+Warning (10034): Output port "data_out" at MIPS32.v(5) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 5
+Info (12128): Elaborating entity "reg32" for hierarchy "MIPS32:M1|reg32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 52
 Warning (10240): Verilog HDL Always Construct warning at reg32.v(10): inferring latch(es) for variable "do", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
 Info (10041): Inferred latch for "do[0]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
 Info (10041): Inferred latch for "do[1]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
@@ -358,13 +383,13 @@ Info (10041): Inferred latch for "do[28]" at reg32.v(10) File: C:/Users/scodm/De
 Info (10041): Inferred latch for "do[29]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
 Info (10041): Inferred latch for "do[30]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
 Info (10041): Inferred latch for "do[31]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (12128): Elaborating entity "ID" for hierarchy "ID:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 63
-Info (12128): Elaborating entity "mux2to1_32" for hierarchy "mux2to1_32:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 65
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:M6" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 69
-Info (12128): Elaborating entity "signext" for hierarchy "signext:M7" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 71
-Info (12128): Elaborating entity "zeroExtImm" for hierarchy "zeroExtImm:M8" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 73
-Info (12128): Elaborating entity "shiftLeft2" for hierarchy "shiftLeft2:M11" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 79
-Info (12128): Elaborating entity "mux8to1_32" for hierarchy "mux8to1_32:M12" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 81
+Info (12128): Elaborating entity "ID" for hierarchy "MIPS32:M1|ID:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 56
+Info (12128): Elaborating entity "mux2to1_32" for hierarchy "MIPS32:M1|mux2to1_32:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 58
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "MIPS32:M1|RegisterFile:M6" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+Info (12128): Elaborating entity "signext" for hierarchy "MIPS32:M1|signext:M7" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 64
+Info (12128): Elaborating entity "zeroExtImm" for hierarchy "MIPS32:M1|zeroExtImm:M8" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 66
+Info (12128): Elaborating entity "shiftLeft2" for hierarchy "MIPS32:M1|shiftLeft2:M11" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 72
+Info (12128): Elaborating entity "mux8to1_32" for hierarchy "MIPS32:M1|mux8to1_32:M12" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 74
 Warning (10270): Verilog HDL Case Statement warning at mux8to1_32.v(22): incomplete case statement has no default case item File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
 Warning (10240): Verilog HDL Always Construct warning at mux8to1_32.v(22): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
 Info (10041): Inferred latch for "out[0]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
@@ -399,11 +424,11 @@ Info (10041): Inferred latch for "out[28]" at mux8to1_32.v(22) File: C:/Users/sc
 Info (10041): Inferred latch for "out[29]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
 Info (10041): Inferred latch for "out[30]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
 Info (10041): Inferred latch for "out[31]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
-Info (12128): Elaborating entity "shiftleft2_26" for hierarchy "shiftleft2_26:M13" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 83
-Info (12128): Elaborating entity "bit_extender_4" for hierarchy "bit_extender_4:M14" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 85
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:M16" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 89
-Info (12128): Elaborating entity "PC" for hierarchy "PC:M19" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 95
-Info (12128): Elaborating entity "control" for hierarchy "control:M21" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 101
+Info (12128): Elaborating entity "shiftleft2_26" for hierarchy "MIPS32:M1|shiftleft2_26:M13" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 76
+Info (12128): Elaborating entity "bit_extender_4" for hierarchy "MIPS32:M1|bit_extender_4:M14" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 78
+Info (12128): Elaborating entity "ALU" for hierarchy "MIPS32:M1|ALU:M16" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 82
+Info (12128): Elaborating entity "PC" for hierarchy "MIPS32:M1|PC:M19" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 88
+Info (12128): Elaborating entity "control" for hierarchy "MIPS32:M1|control:M21" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 94
 Warning (10240): Verilog HDL Always Construct warning at control.v(48): inferring latch(es) for variable "nextState", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
 Info (10041): Inferred latch for "nextState.S_WB_LW" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
 Info (10041): Inferred latch for "nextState.S_WB_I" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
@@ -416,39 +441,162 @@ Info (10041): Inferred latch for "nextState.S_EXE_I" at control.v(48) File: C:/U
 Info (10041): Inferred latch for "nextState.S_EXE_R" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
 Info (10041): Inferred latch for "nextState.S_ID" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
 Info (10041): Inferred latch for "nextState.S_IF" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
+Info (12128): Elaborating entity "rom" for hierarchy "rom:M2" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 28
+Warning (10030): Net "mem[1..43]" at rom.v(13) has no driver or initial value, using a default initial value '0' File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 13
+Warning (10030): Net "mem[45..67]" at rom.v(13) has no driver or initial value, using a default initial value '0' File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 13
+Warning (10030): Net "mem[69..511]" at rom.v(13) has no driver or initial value, using a default initial value '0' File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 13
+Info (10041): Inferred latch for "mem[68][0]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][1]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][2]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][3]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][4]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][5]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][6]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][7]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][8]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][9]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][10]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][11]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][12]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][13]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][14]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][15]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][16]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][17]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][18]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][19]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][20]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][21]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][22]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][23]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][24]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][25]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][26]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][27]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][28]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][29]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][30]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[68][31]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][0]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][1]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][2]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][3]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][4]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][5]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][6]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][7]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][8]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][9]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][10]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][11]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][12]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][13]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][14]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][15]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][16]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][17]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][18]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][19]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][20]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][21]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][22]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][23]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][24]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][25]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][26]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][27]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][28]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][29]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][30]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[44][31]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][0]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][1]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][2]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][3]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][4]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][5]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][6]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][7]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][8]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][9]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][10]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][11]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][12]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][13]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][14]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][15]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][16]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][17]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][18]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][19]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][20]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][21]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][22]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][23]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][24]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][25]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][26]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][27]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][28]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][29]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][30]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (10041): Inferred latch for "mem[0][31]" at rom.v(18) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 18
+Info (12128): Elaborating entity "ram" for hierarchy "ram:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 30
+Info (12128): Elaborating entity "outputModule" for hierarchy "outputModule:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 32
+Warning (10230): Verilog HDL assignment warning at outputModule.v(14): truncated value with size 32 to match size of target (10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/outputModule.v Line: 14
+Info (12128): Elaborating entity "decoder3to8" for hierarchy "decoder3to8:M5" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 34
+Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y0", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y1", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y2", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y3", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y4", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y5", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y6", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y7", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Info (10041): Inferred latch for "y7" at decoder3to8.v(13) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Info (10041): Inferred latch for "y6" at decoder3to8.v(13) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Info (10041): Inferred latch for "y5" at decoder3to8.v(13) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Info (10041): Inferred latch for "y4" at decoder3to8.v(13) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Info (10041): Inferred latch for "y3" at decoder3to8.v(13) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Info (10041): Inferred latch for "y2" at decoder3to8.v(13) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Info (10041): Inferred latch for "y1" at decoder3to8.v(13) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
+Info (10041): Inferred latch for "y0" at decoder3to8.v(13) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "d_in[31]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[30]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[29]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[28]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[27]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[26]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[25]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[24]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[23]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[22]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[21]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[20]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[19]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[18]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[17]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[16]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[15]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[14]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[13]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[12]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[11]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[10]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[9]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[8]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[7]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[6]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[5]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[4]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[3]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[2]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[1]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
-    Warning (12110): Net "d_in[0]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 25
+    Warning (12110): Net "MIPS32:M1|d_in[31]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[30]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[29]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[28]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[27]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[26]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[25]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[24]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[23]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[22]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[21]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[20]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[19]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[18]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[17]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[16]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[15]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[14]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[13]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[12]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[11]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[10]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[9]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[8]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[7]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[6]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[5]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[4]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[3]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[2]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[1]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+    Warning (12110): Net "MIPS32:M1|d_in[0]" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 18
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "MemWrite" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 17
+    Warning (12110): Net "MemRead" is missing source, defaulting to GND File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 17
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (20013): Ignored 211 assignments for entity "DE10_Lite" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CLK_10 -entity DE10_Lite was ignored
@@ -662,10 +810,17 @@ Warning (20013): Ignored 211 assignments for entity "DE10_Lite" -- entity does n
     Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE10_Lite -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_Lite -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_Lite -section_id Top was ignored
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 269 warnings
+Info (144001): Generated suppressed messages file C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/output_files/MCycMIPS32_top.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 277 warnings
     Info: Peak virtual memory: 4725 megabytes
-    Info: Processing ended: Fri Apr 28 09:18:35 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Fri Apr 28 21:11:17 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/output_files/MCycMIPS32_top.map.smsg.
 
 

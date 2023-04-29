@@ -452,6 +452,7 @@ set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity D
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE SourceCode/decoder3to8.v
 set_global_assignment -name VERILOG_FILE SourceCode/outputControl.v
 set_global_assignment -name VERILOG_FILE SourceCode/MyDefines.v
 set_global_assignment -name VERILOG_FILE SourceCode/signext.v
@@ -469,4 +470,9 @@ set_global_assignment -name VERILOG_FILE SourceCode/reg32.v
 set_global_assignment -name VERILOG_FILE SourceCode/bit_extender_4.v
 set_global_assignment -name VERILOG_FILE SourceCode/shiftleft2_26.v
 set_global_assignment -name VERILOG_FILE SourceCode/control.v
+set_global_assignment -name VERILOG_FILE SourceCode/rom.v
+set_global_assignment -name VERILOG_FILE SourceCode/ram.v
+set_global_assignment -name VERILOG_FILE SourceCode/outputModule.v
+set_global_assignment -name VERILOG_FILE SourceCode/real_reg32.v
+set_global_assignment -name VERILOG_FILE SourceCode/MIPS32.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
