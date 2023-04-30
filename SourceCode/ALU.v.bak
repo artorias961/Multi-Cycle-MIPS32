@@ -27,18 +27,13 @@ module ALU(ALUop, A, B, ALUResult, zero); //add a zeroflag element
             end
             `_ALUOP_NOR: begin
                 ALUResult = ~ (A | B);
+            
             end 
             `_ALUOP_XOR: begin
                 ALUResult = A ^ B;
             end
             `_ALUOP_SLT: begin  //less than
                 ALUResult = (A < B) ? 32'd1 : 32'd0;
-            end
-            `_ALUOP_SLL: begin
-                ALUResult = A << B;
-            end
-            `_ALUOP_SRL: begin
-                ALUResult = A >> B;
             end
             default: begin
                 ALUResult = 32'd0;

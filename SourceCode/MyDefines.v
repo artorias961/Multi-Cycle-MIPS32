@@ -132,8 +132,8 @@ RA							(UNSAFE)
 `define _FUNC_XOR		6'd38
 `define _FUNC_NOR		6'd39
 `define _FUNC_SLT		6'd42
-`define _FUNC_SRL		6'd00  // Check
-`define _FUNC_SLL		6'd02  // Check
+`define _FUNC_SRL		6'd2  // Check
+`define _FUNC_SLL		6'd0  // Check
 
 
 // ALU Operation code
@@ -142,6 +142,8 @@ RA							(UNSAFE)
 `define _ALUOP_ADD		`_ALUOP_BITS'b0010
 `define _ALUOP_SUB		`_ALUOP_BITS'b0110
 `define _ALUOP_SLT		`_ALUOP_BITS'b0111
+`define _ALUOP_SLL      `_ALUOP_BITS'b1000
+`define _ALUOP_SRL      `_ALUOP_BITS'b1001
 `define _ALUOP_NOR		`_ALUOP_BITS'b1100
 `define _ALUOP_XOR		`_ALUOP_BITS'b1101 // FIXME: Check this value in textbook
 // FIX LATER ON

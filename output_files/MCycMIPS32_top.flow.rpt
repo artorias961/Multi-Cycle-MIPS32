@@ -1,5 +1,5 @@
 Flow report for MCycMIPS32_top
-Fri Apr 28 21:11:17 2023
+Sat Apr 29 19:16:49 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Fri Apr 28 21:11:16 2023          ;
+; Flow Status                        ; Successful - Sat Apr 29 19:16:49 2023          ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                      ; MCycMIPS32_top                                 ;
 ; Top-level Entity Name              ; MCycMIPS32_top                                 ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/28/2023 21:11:08 ;
+; Start date & time ; 04/29/2023 19:16:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MCycMIPS32_top      ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 168202114951714.168274146816908        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 168202114951714.168282100118708        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -116,8 +116,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 4725 MB             ; 00:00:19                           ;
-; Total                  ; 00:00:08     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Elaboration ; 00:00:09     ; 1.0                     ; 4728 MB             ; 00:00:18                           ;
+; Total                  ; 00:00:09     ; --                      ; --                  ; 00:00:18                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
