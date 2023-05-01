@@ -30,11 +30,12 @@ module control(clk, nrst,
                 S_EXE_I     = 4'd3,
                 S_EXE_BEQ   = 4'd4,
                 S_EXE_LW    = 4'd5,
-                S_MEM_LW    = 4'd6,
-                S_MEM_SW    = 4'd7,
-                S_WB_R      = 4'd8,
-                S_WB_I      = 4'd9,
-                S_WB_LW     = 4'd10;  
+                S_EXE_J     = 4'd6,
+                S_MEM_LW    = 4'd7,
+                S_MEM_SW    = 4'd8,
+                S_WB_R      = 4'd9,
+                S_WB_I      = 4'd10,
+                S_WB_LW     = 4'd11;  
                 
                 
     //implementation using 3 always blocks
@@ -63,6 +64,8 @@ module control(clk, nrst,
                 end else if ((op == `_OP_LW) || (op == `_OP_SW)) begin 
                     nextState = S_EXE_LW;
                     
+                end else if (op == `_OP_J) begin
+                    nextState = S_EXE_J;
                 end
             end
             S_EXE_R: begin
@@ -83,6 +86,9 @@ module control(clk, nrst,
                 end else if (op == `_OP_SW) begin
                     nextState = S_MEM_SW;
                 end
+            end
+            S_EXE_J: begin
+                nextState = S_IF;
             end
             S_MEM_LW: begin
                 nextState = S_WB_LW;
@@ -271,6 +277,24 @@ module control(clk, nrst,
                 MemRead     = 1'b0;
                 MemWrite    = 1'b0;
             
+            end
+            S_EXE_J: begin
+                IR          = 1'b0;
+                MDR         = 1'b0;
+                MemtoReg    = 1'b0;
+                RegDst      = 1'b0;
+                RegWrite    = 1'b0;
+                RegA        = 1'b0;
+                RegB        = 1'b0;
+                AluSrcA     = 1'b0;
+                AluSrcB     = 3'b000;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_ADD;
+                PCSrc       = 2'b10;
+                IorD        = 1'b0;
+                PCWrite     = 1'b1;
+                MemRead     = 1'b0;
+                MemWrite    = 1'b0;
             end
             S_MEM_LW: begin
                 IR          = 1'b0;
