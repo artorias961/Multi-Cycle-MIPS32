@@ -19,7 +19,7 @@ module MCycMIPS32_top(clk, nrst, MAX10_CLK1_50, KEY, SW, LEDR,
     
     wire [31:0] addr;
     wire [31:0] dataOut;
-    wire [31:0] dataIn;
+    wire  [31:0] dataIn;
     
     
     

@@ -119,7 +119,7 @@ RA							(UNSAFE)
 `define _OP_XORI		6'b001110
 `define _OP_BNE			6'd05 //Check
 `define _OP_SLTI		6'd10 //Check
-`define _OP_J			6'd08 //Check
+`define _OP_J			6'd03 //Check
 `define _OP_JR			6'd02 //Check 
 
 // Function code		

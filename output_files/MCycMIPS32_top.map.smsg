@@ -1,2 +1,3 @@
 Warning (10273): Verilog HDL warning at rom.v(15): extended using "x" or "z" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 15
 Warning (10273): Verilog HDL warning at ram.v(21): extended using "x" or "z" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ram.v Line: 21
+Warning (10273): Verilog HDL warning at sram.v(36): extended using "x" or "z" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/sram.v Line: 36

@@ -5,7 +5,7 @@ module rom(nrst, nce, re, addr, d_out); //re - read enable
     input           nrst, nce, re;
   //input  [10:2]   addr; this is an error
     input  [8:0]    addr; //lower two bits we don't need to connect
-    output [31:0]   d_out;
+    inout  [31:0]   d_out;
     
     //make d_out a tristate wire
     tri [31:0]      d_out;

@@ -49,9 +49,11 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     wire [3:0] aluop;
     wire [27:0] addr28;
     
-    reg32           M1 (.di(d_in), .ctrl(IR), .do(r_id));
+    //reg32           M1 (.di(d_in), .ctrl(IR), .do(r_id));
+    real_reg32      M1(.clk(clk), .nrst(nrst), .en(IR), .d_in(d_in), .d_out(r_id));
     
-    reg32           M2(.di(d_in), .ctrl(MDR), .do(mdr_r));
+    //reg32           M2(.di(d_in), .ctrl(MDR), .do(mdr_r));
+    real_reg32      M2(.clk(clk), .nrst(nrst), .en(MDR), .d_in(d_in), .d_out(mdr_r));
     
     ID              M3(.instr(r_id), .op(op), .rs(rs), .rt(rt), .rd(rd), .shamt(shamt), .func(func), .imm16(imm16), .address(addr26));
     
@@ -65,15 +67,17 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     
     zeroExtImm      M8(.in(imm16), .out(zero_imm32));
     
-    reg32           M9(.di(r_data1), .ctrl(RegA), .do(r_data1_r));
+    //reg32           M9(.di(r_data1), .ctrl(RegA), .do(r_data1_r));
+    real_reg32      M9(.clk(clk), .nrst(nrst), .en(RegA), .d_in(r_data1), .d_out(r_data1_r));
     
-    reg32          M10(.di(r_data2), .ctrl(RegB), .do(r_data2_r));
+    //reg32          M10(.di(r_data2), .ctrl(RegB), .do(r_data2_r));
+    real_reg32     M10(.clk(clk), .nrst(nrst), .en(RegB), .d_in(r_data2), .d_out(r_data2_r));
     
     shiftLeft2     M11(.in(imm32), .out(shift_imm32));
     
     mux8to1_32     M12(.in0(r_data2_r), .in1(shamt), .in2(imm32), .in3(shift_imm32), .in4(32'd4), .in5(zero_imm32), .in6(), .in7(), .sel(AluSrcB), .out(alu_B));
     
-    shiftleft2_26  M13(.di(addr26), .do(addr28));
+    shiftleft2_26  M13(.d_i(addr26), .d_o(addr28));
     
     bit_extender_4 M14(.di_28(addr28), .pc(pc), .do_32(addr32));
     
@@ -81,7 +85,8 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     
     ALU            M16(.ALUop(aluop), .A(alu_A), .B(alu_B), .ALUResult(alu_result), .zero(zeroflag));
     
-    reg32          M17(.di(alu_result), .ctrl(AluResult), .do(alu_result_r));
+    //reg32          M17(.di(alu_result), .ctrl(AluResult), .do(alu_result_r));
+    real_reg32     M17(.clk(clk), .nrst(nrst), .en(AluResult), .d_in(alu_result), .d_out(alu_result_r));
     
     mux8to1_32     M18(.in0(alu_result), .in1(alu_result_r), .in2(addr32), .in3(r_data1_r), .in4(), .in5(), .in6(), .in7(), .sel(PCSrc), .out(PCSrc_out));
     

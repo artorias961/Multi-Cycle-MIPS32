@@ -55,7 +55,7 @@ module control(clk, nrst,
                 if (op == `_OP_RTYPE) begin
                     nextState = S_EXE_R;
                 
-                end else if (op == `_OP_ITYPE) begin
+                end else if (op == `_OP_ADDI) begin
                     nextState = S_EXE_I;
                 
                 end else if (op == `_OP_BEQ) begin

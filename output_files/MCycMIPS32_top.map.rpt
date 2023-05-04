@@ -1,5 +1,5 @@
 Analysis & Elaboration report for MCycMIPS32_top
-Sat Apr 29 19:16:49 2023
+Wed May  3 18:43:21 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -47,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                      ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sat Apr 29 19:16:49 2023          ;
+; Analysis & Elaboration Status      ; Successful - Wed May  3 18:43:21 2023          ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                      ; MCycMIPS32_top                                 ;
 ; Top-level Entity Name              ; MCycMIPS32_top                                 ;
@@ -93,11 +93,12 @@ https://fpgasoftware.intel.com/eula.
 ; S_EXE_I        ; 0011  ; Unsigned Binary                           ;
 ; S_EXE_BEQ      ; 0100  ; Unsigned Binary                           ;
 ; S_EXE_LW       ; 0101  ; Unsigned Binary                           ;
-; S_MEM_LW       ; 0110  ; Unsigned Binary                           ;
-; S_MEM_SW       ; 0111  ; Unsigned Binary                           ;
-; S_WB_R         ; 1000  ; Unsigned Binary                           ;
-; S_WB_I         ; 1001  ; Unsigned Binary                           ;
-; S_WB_LW        ; 1010  ; Unsigned Binary                           ;
+; S_EXE_J        ; 0110  ; Unsigned Binary                           ;
+; S_MEM_LW       ; 0111  ; Unsigned Binary                           ;
+; S_MEM_SW       ; 1000  ; Unsigned Binary                           ;
+; S_WB_R         ; 1001  ; Unsigned Binary                           ;
+; S_WB_I         ; 1010  ; Unsigned Binary                           ;
+; S_WB_LW        ; 1011  ; Unsigned Binary                           ;
 +----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -286,7 +287,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sat Apr 29 19:16:40 2023
+    Info: Processing started: Wed May  3 18:43:13 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MCycMIPS32 -c MCycMIPS32_top --analysis_and_elaboration
 Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -324,7 +325,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file sourcec
     Info (12023): Found entity 1: reg32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/bit_extender_4.v
     Info (12023): Found entity 1: bit_extender_4 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/bit_extender_4.v Line: 1
-Warning (10463): Verilog HDL Declaration warning at shiftleft2_26.v(3): "do" is SystemVerilog-2005 keyword File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/shiftleft2_26.v
     Info (12023): Found entity 1: shiftleft2_26 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/control.v
@@ -339,7 +339,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file sourcec
     Info (12023): Found entity 1: real_reg32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/real_reg32.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/mips32.v
     Info (12023): Found entity 1: MIPS32 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at MIPS32.v(88): created implicit net for "ce" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 88
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/sram.v
+    Info (12023): Found entity 1: sram File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/sram.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/mcycmips32_tb.v
+    Info (12023): Found entity 1: MCycMIPS32_tb File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v Line: 3
+Warning (10236): Verilog HDL Implicit Net warning at shiftleft2_26.v(5): created implicit net for "do" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 5
+Warning (10463): Verilog HDL Declaration warning at shiftleft2_26.v(5): "do" is SystemVerilog-2005 keyword File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 5
+Warning (10236): Verilog HDL Implicit Net warning at MIPS32.v(93): created implicit net for "ce" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 93
 Info (12127): Elaborating entity "MCycMIPS32_top" for the top level hierarchy
 Warning (10034): Output port "HEX0" at MCycMIPS32_top.v(10) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 10
 Warning (10034): Output port "HEX1" at MCycMIPS32_top.v(11) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 11
@@ -349,47 +355,14 @@ Warning (10034): Output port "HEX4" at MCycMIPS32_top.v(14) has no driver File: 
 Warning (10034): Output port "HEX5" at MCycMIPS32_top.v(15) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 15
 Info (12128): Elaborating entity "MIPS32" for hierarchy "MIPS32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 26
 Warning (10034): Output port "data_out" at MIPS32.v(5) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 5
-Info (12128): Elaborating entity "reg32" for hierarchy "MIPS32:M1|reg32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 52
-Warning (10240): Verilog HDL Always Construct warning at reg32.v(10): inferring latch(es) for variable "do", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[0]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[1]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[2]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[3]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[4]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[5]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[6]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[7]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[8]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[9]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[10]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[11]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[12]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[13]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[14]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[15]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[16]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[17]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[18]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[19]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[20]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[21]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[22]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[23]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[24]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[25]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[26]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[27]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[28]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[29]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[30]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (10041): Inferred latch for "do[31]" at reg32.v(10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/reg32.v Line: 10
-Info (12128): Elaborating entity "ID" for hierarchy "MIPS32:M1|ID:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 56
-Info (12128): Elaborating entity "mux2to1_32" for hierarchy "MIPS32:M1|mux2to1_32:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 58
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "MIPS32:M1|RegisterFile:M6" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
-Info (12128): Elaborating entity "signext" for hierarchy "MIPS32:M1|signext:M7" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 64
-Info (12128): Elaborating entity "zeroExtImm" for hierarchy "MIPS32:M1|zeroExtImm:M8" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 66
-Info (12128): Elaborating entity "shiftLeft2" for hierarchy "MIPS32:M1|shiftLeft2:M11" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 72
-Info (12128): Elaborating entity "mux8to1_32" for hierarchy "MIPS32:M1|mux8to1_32:M12" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 74
+Info (12128): Elaborating entity "real_reg32" for hierarchy "MIPS32:M1|real_reg32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 53
+Info (12128): Elaborating entity "ID" for hierarchy "MIPS32:M1|ID:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 58
+Info (12128): Elaborating entity "mux2to1_32" for hierarchy "MIPS32:M1|mux2to1_32:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 60
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "MIPS32:M1|RegisterFile:M6" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 64
+Info (12128): Elaborating entity "signext" for hierarchy "MIPS32:M1|signext:M7" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 66
+Info (12128): Elaborating entity "zeroExtImm" for hierarchy "MIPS32:M1|zeroExtImm:M8" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 68
+Info (12128): Elaborating entity "shiftLeft2" for hierarchy "MIPS32:M1|shiftLeft2:M11" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 76
+Info (12128): Elaborating entity "mux8to1_32" for hierarchy "MIPS32:M1|mux8to1_32:M12" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 78
 Warning (10270): Verilog HDL Case Statement warning at mux8to1_32.v(22): incomplete case statement has no default case item File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
 Warning (10240): Verilog HDL Always Construct warning at mux8to1_32.v(22): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
 Info (10041): Inferred latch for "out[0]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
@@ -424,28 +397,32 @@ Info (10041): Inferred latch for "out[28]" at mux8to1_32.v(22) File: C:/Users/sc
 Info (10041): Inferred latch for "out[29]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
 Info (10041): Inferred latch for "out[30]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
 Info (10041): Inferred latch for "out[31]" at mux8to1_32.v(22) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v Line: 22
-Info (12128): Elaborating entity "shiftleft2_26" for hierarchy "MIPS32:M1|shiftleft2_26:M13" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 76
-Info (12128): Elaborating entity "bit_extender_4" for hierarchy "MIPS32:M1|bit_extender_4:M14" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 78
-Info (12128): Elaborating entity "ALU" for hierarchy "MIPS32:M1|ALU:M16" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 82
-Info (12128): Elaborating entity "PC" for hierarchy "MIPS32:M1|PC:M19" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 88
-Info (12128): Elaborating entity "control" for hierarchy "MIPS32:M1|control:M21" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 94
-Warning (10240): Verilog HDL Always Construct warning at control.v(48): inferring latch(es) for variable "nextState", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Warning (10240): Verilog HDL Always Construct warning at control.v(127): inferring latch(es) for variable "ALUop", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 127
-Info (10041): Inferred latch for "ALUop[0]" at control.v(127) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 127
-Info (10041): Inferred latch for "ALUop[1]" at control.v(127) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 127
-Info (10041): Inferred latch for "ALUop[2]" at control.v(127) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 127
-Info (10041): Inferred latch for "ALUop[3]" at control.v(127) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 127
-Info (10041): Inferred latch for "nextState.S_WB_LW" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_WB_I" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_WB_R" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_MEM_SW" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_MEM_LW" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_EXE_LW" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_EXE_BEQ" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_EXE_I" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_EXE_R" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_ID" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
-Info (10041): Inferred latch for "nextState.S_IF" at control.v(48) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 48
+Info (12128): Elaborating entity "shiftleft2_26" for hierarchy "MIPS32:M1|shiftleft2_26:M13" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 80
+Warning (10036): Verilog HDL or VHDL warning at shiftleft2_26.v(5): object "do" assigned a value but never read File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 5
+Warning (10230): Verilog HDL assignment warning at shiftleft2_26.v(5): truncated value with size 28 to match size of target (1) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 5
+Warning (10034): Output port "d_o" at shiftleft2_26.v(3) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 3
+Info (12128): Elaborating entity "bit_extender_4" for hierarchy "MIPS32:M1|bit_extender_4:M14" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 82
+Info (12128): Elaborating entity "ALU" for hierarchy "MIPS32:M1|ALU:M16" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 86
+Info (12128): Elaborating entity "PC" for hierarchy "MIPS32:M1|PC:M19" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 93
+Info (12128): Elaborating entity "control" for hierarchy "MIPS32:M1|control:M21" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 99
+Warning (10240): Verilog HDL Always Construct warning at control.v(49): inferring latch(es) for variable "nextState", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Warning (10240): Verilog HDL Always Construct warning at control.v(133): inferring latch(es) for variable "ALUop", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 133
+Info (10041): Inferred latch for "ALUop[0]" at control.v(133) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 133
+Info (10041): Inferred latch for "ALUop[1]" at control.v(133) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 133
+Info (10041): Inferred latch for "ALUop[2]" at control.v(133) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 133
+Info (10041): Inferred latch for "ALUop[3]" at control.v(133) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 133
+Info (10041): Inferred latch for "nextState.S_WB_LW" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_WB_I" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_WB_R" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_MEM_SW" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_MEM_LW" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_EXE_J" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_EXE_LW" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_EXE_BEQ" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_EXE_I" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_EXE_R" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_ID" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
+Info (10041): Inferred latch for "nextState.S_IF" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
 Info (12128): Elaborating entity "rom" for hierarchy "rom:M2" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 28
 Warning (10030): Net "mem[1..3]" at rom.v(13) has no driver or initial value, using a default initial value '0' File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 13
 Warning (10030): Net "mem[5..7]" at rom.v(13) has no driver or initial value, using a default initial value '0' File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 13
@@ -2367,10 +2344,10 @@ Warning (20013): Ignored 211 assignments for entity "DE10_Lite" -- entity does n
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_Lite -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_Lite -section_id Top was ignored
 Info (144001): Generated suppressed messages file C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/output_files/MCycMIPS32_top.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 325 warnings
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 328 warnings
     Info: Peak virtual memory: 4728 megabytes
-    Info: Processing ended: Sat Apr 29 19:16:49 2023
-    Info: Elapsed time: 00:00:09
+    Info: Processing ended: Wed May  3 18:43:21 2023
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:18
 
 

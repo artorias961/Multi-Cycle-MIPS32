@@ -2,7 +2,7 @@ module ram(clk, nce, re, we, addr, d_in, d_out); //re - read enable, we - write 
     input           clk, nce, re, we;
     input  [8:0]    addr; 
     input  [31:0]   d_in;
-    output [31:0]   d_out;
+    inout  [31:0]   d_out;
     
     tri [31:0]      d_out;
     

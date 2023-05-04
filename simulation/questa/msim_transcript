@@ -1,0 +1,370 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 win64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do MCycMIPS32_top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/22.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:25 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v 
+# -- Compiling module decoder3to8
+# 
+# Top level modules:
+# 	decoder3to8
+# End time: 19:03:25 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:26 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v 
+# End time: 19:03:26 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/signext.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:26 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/signext.v 
+# -- Compiling module signext
+# 
+# Top level modules:
+# 	signext
+# End time: 19:03:26 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftLeft2.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:26 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftLeft2.v 
+# -- Compiling module shiftLeft2
+# 
+# Top level modules:
+# 	shiftLeft2
+# End time: 19:03:26 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/RegisterFile.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:26 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/RegisterFile.v 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 19:03:26 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/PC.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:26 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 19:03:26 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:26 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v 
+# -- Compiling module mux2to1_32
+# 
+# Top level modules:
+# 	mux2to1_32
+# End time: 19:03:27 on May 03,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ID.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:27 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ID.v 
+# -- Compiling module ID
+# 
+# Top level modules:
+# 	ID
+# End time: 19:03:27 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:27 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v 
+# -- Compiling module MCycMIPS32_top
+# 
+# Top level modules:
+# 	MCycMIPS32_top
+# End time: 19:03:27 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/zeroExtImm.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:27 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/zeroExtImm.v 
+# -- Compiling module zeroExtImm
+# 
+# Top level modules:
+# 	zeroExtImm
+# End time: 19:03:27 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:27 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v 
+# -- Compiling module mux8to1_32
+# 
+# Top level modules:
+# 	mux8to1_32
+# End time: 19:03:27 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/bit_extender_4.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:27 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/bit_extender_4.v 
+# -- Compiling module bit_extender_4
+# 
+# Top level modules:
+# 	bit_extender_4
+# End time: 19:03:27 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:27 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v 
+# -- Compiling module shiftleft2_26
+# 
+# Top level modules:
+# 	shiftleft2_26
+# End time: 19:03:27 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ram.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:27 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ram.v 
+# -- Compiling module ram
+# 
+# Top level modules:
+# 	ram
+# End time: 19:03:27 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/outputModule.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:27 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/outputModule.v 
+# -- Compiling module outputModule
+# 
+# Top level modules:
+# 	outputModule
+# End time: 19:03:28 on May 03,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/real_reg32.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:28 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/real_reg32.v 
+# -- Compiling module real_reg32
+# 
+# Top level modules:
+# 	real_reg32
+# End time: 19:03:28 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:28 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v 
+# -- Compiling module MIPS32
+# 
+# Top level modules:
+# 	MIPS32
+# End time: 19:03:28 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ALU.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:28 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ALU.v 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 19:03:28 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:28 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 19:03:28 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:28 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v 
+# -- Compiling module rom
+# 
+# Top level modules:
+# 	rom
+# End time: 19:03:28 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode {C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:03:28 on May 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode" C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v 
+# -- Compiling module MCycMIPS32_tb
+# 
+# Top level modules:
+# 	MCycMIPS32_tb
+# End time: 19:03:28 on May 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  MCycMIPS32_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" MCycMIPS32_tb 
+# Start time: 19:03:28 on May 03,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "control(fast)".
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 12, found 2.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'HEX5'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'HEX4'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'HEX3'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'HEX2'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'HEX1'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'HEX0'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'LEDR'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'SW'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'KEY'.
+# ** Warning: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(6): (vopt-2718) [TFMPC] - Missing connection for port 'MAX10_CLK1_50'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=11.
+# Loading work.MCycMIPS32_tb(fast)
+# Loading work.MCycMIPS32_top(fast)
+# Loading work.MIPS32(fast)
+# Loading work.real_reg32(fast)
+# Loading work.ID(fast)
+# Loading work.mux2to1_32(fast)
+# Loading work.RegisterFile(fast)
+# Loading work.signext(fast)
+# Loading work.zeroExtImm(fast)
+# Loading work.shiftLeft2(fast)
+# Loading work.mux8to1_32(fast)
+# Loading work.shiftleft2_26(fast)
+# Loading work.bit_extender_4(fast)
+# Loading work.ALU(fast)
+# Loading work.PC(fast)
+# Loading work.control(fast)
+# Loading work.rom(fast)
+# Loading work.ram(fast)
+# Loading work.outputModule(fast)
+# Loading work.decoder3to8(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in0'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in1'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in1'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M12 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 78
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (2) for port 'sel'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M18 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 91
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(19)
+#    Time: 310 ns  Iteration: 0  Instance: /MCycMIPS32_tb
+# Break in Module MCycMIPS32_tb at C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v line 19
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=11.
+# Loading work.MCycMIPS32_tb(fast)
+# Loading work.MCycMIPS32_top(fast)
+# Loading work.MIPS32(fast)
+# Loading work.real_reg32(fast)
+# Loading work.ID(fast)
+# Loading work.mux2to1_32(fast)
+# Loading work.RegisterFile(fast)
+# Loading work.signext(fast)
+# Loading work.zeroExtImm(fast)
+# Loading work.shiftLeft2(fast)
+# Loading work.mux8to1_32(fast)
+# Loading work.shiftleft2_26(fast)
+# Loading work.bit_extender_4(fast)
+# Loading work.ALU(fast)
+# Loading work.PC(fast)
+# Loading work.control(fast)
+# Loading work.rom(fast)
+# Loading work.ram(fast)
+# Loading work.outputModule(fast)
+# Loading work.decoder3to8(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in0'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in1'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in1'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M12 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 78
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (2) for port 'sel'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M18 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 91
+run -all
+# ** Note: $stop    : C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(19)
+#    Time: 310 ns  Iteration: 0  Instance: /MCycMIPS32_tb
+# Break in Module MCycMIPS32_tb at C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v line 19
+add wave -position end  sim:/MCycMIPS32_tb/DUT/M4/d_in
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=11.
+# Loading work.MCycMIPS32_tb(fast)
+# Loading work.MCycMIPS32_top(fast)
+# Loading work.MIPS32(fast)
+# Loading work.real_reg32(fast)
+# Loading work.ID(fast)
+# Loading work.mux2to1_32(fast)
+# Loading work.RegisterFile(fast)
+# Loading work.signext(fast)
+# Loading work.zeroExtImm(fast)
+# Loading work.shiftLeft2(fast)
+# Loading work.mux8to1_32(fast)
+# Loading work.shiftleft2_26(fast)
+# Loading work.bit_extender_4(fast)
+# Loading work.ALU(fast)
+# Loading work.PC(fast)
+# Loading work.control(fast)
+# Loading work.rom(fast)
+# Loading work.ram(fast)
+# Loading work.outputModule(fast)
+# Loading work.decoder3to8(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in0'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in1'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M5 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 62
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (5) for port 'in1'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M12 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 78
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (2) for port 'sel'. The port definition is at: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux8to1_32.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /MCycMIPS32_tb/DUT/M1/M18 File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 91
+run -all
+# ** Note: $stop    : C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v(19)
+#    Time: 310 ns  Iteration: 0  Instance: /MCycMIPS32_tb
+# Break in Module MCycMIPS32_tb at C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v line 19
+# End time: 19:14:01 on May 03,2023, Elapsed time: 0:10:33
+# Errors: 0, Warnings: 16

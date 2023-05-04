@@ -1,8 +1,8 @@
-module shiftleft2_26(di, do);
-    input [25:0] di;
-    output [27:0] do;
+module shiftleft2_26(d_i, d_o);
+    input [25:0] d_i;
+    output [27:0] d_o;
     
-    assign do = {2'b00, di} << 2;
+    assign do = {2'b00, d_i} << 2;
 
 
 
