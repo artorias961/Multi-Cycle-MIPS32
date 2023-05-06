@@ -1,11 +1,12 @@
 module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
-    input         clk, nrst, MemWrite, MemRead;
+    input         clk, nrst; 
+    output        MemWrite, MemRead;
     input  [31:0] data_in;
     output [31:0] address;
     output [31:0] data_out;
     
     //reg    [31:0] address;
-    reg    [31:0] data_out;
+    //reg    [31:0] data_out;
     
     wire        IR, MDR, MemToReg, RegDst, RegA, RegB, 
                 AluSrcA, AluResult, IorD, RegWrite, 
@@ -15,7 +16,6 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     wire [2:0]  AluSrcB;
     wire        zeroflag;
     
-    wire [31:0] d_in;
     wire [31:0] r_id;
     wire [31:0] mdr_r;
     wire [31:0] w_data;
@@ -50,10 +50,10 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     wire [27:0] addr28;
     
     //reg32           M1 (.di(d_in), .ctrl(IR), .do(r_id));
-    real_reg32      M1(.clk(clk), .nrst(nrst), .en(IR), .d_in(d_in), .d_out(r_id));
+    real_reg32      M1(.clk(clk), .nrst(nrst), .en(IR), .d_in(data_in), .d_out(r_id));
     
     //reg32           M2(.di(d_in), .ctrl(MDR), .do(mdr_r));
-    real_reg32      M2(.clk(clk), .nrst(nrst), .en(MDR), .d_in(d_in), .d_out(mdr_r));
+    real_reg32      M2(.clk(clk), .nrst(nrst), .en(MDR), .d_in(data_in), .d_out(mdr_r));
     
     ID              M3(.instr(r_id), .op(op), .rs(rs), .rt(rt), .rd(rd), .shamt(shamt), .func(func), .imm16(imm16), .address(addr26));
     
@@ -71,11 +71,11 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     real_reg32      M9(.clk(clk), .nrst(nrst), .en(RegA), .d_in(r_data1), .d_out(r_data1_r));
     
     //reg32          M10(.di(r_data2), .ctrl(RegB), .do(r_data2_r));
-    real_reg32     M10(.clk(clk), .nrst(nrst), .en(RegB), .d_in(r_data2), .d_out(r_data2_r));
+    real_reg32     M10(.clk(clk), .nrst(nrst), .en(RegB), .d_in(r_data2), .d_out(data_out));
     
     shiftLeft2     M11(.in(imm32), .out(shift_imm32));
     
-    mux8to1_32     M12(.in0(r_data2_r), .in1(shamt), .in2(imm32), .in3(shift_imm32), .in4(32'd4), .in5(zero_imm32), .in6(), .in7(), .sel(AluSrcB), .out(alu_B));
+    mux8to1_32     M12(.in0(data_out), .in1(shamt), .in2(imm32), .in3(shift_imm32), .in4(32'd4), .in5(zero_imm32), .in6(), .in7(), .sel(AluSrcB), .out(alu_B));
     
     shiftleft2_26  M13(.d_i(addr26), .d_o(addr28));
     
@@ -90,7 +90,8 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     
     mux8to1_32     M18(.in0(alu_result), .in1(alu_result_r), .in2(addr32), .in3(r_data1_r), .in4(), .in5(), .in6(), .in7(), .sel(PCSrc), .out(PCSrc_out));
     
-    PC             M19(.clk(PCWrite), .nrst(nrst), .ce(ce), .newPc(PCSrc_out), .pc(pc));
+                   //I changed clk input from "PCWrite" to "clk"
+    PC             M19(.clk(clk), .nrst(nrst), .ce(ce), .newPc(PCSrc_out), .pc(pc));
     
     mux2to1_32     M20(.in0(pc), .in1(alu_result_r), .sel(IorD), .out(address));
     

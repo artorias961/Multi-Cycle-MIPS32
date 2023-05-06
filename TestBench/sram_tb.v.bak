@@ -1,0 +1,36 @@
+`timescale 1ns/1ps
+
+module sram_tb();
+
+    reg     clk, nce, re, we;
+    reg [10:0] addr;
+    reg [7:0]  wdata;
+    tri [7:0] data;
+    
+    assign data = (we == 1'b1)? wdata : 8'bz;
+
+    sram    DUT(.clk(clk), .nce(nce), .re(re), .we(we), .addr(addr), .data());
+    
+    initial begin 
+                clk = 1'b0;
+        forever # 5  clk = ~clk;
+    end
+    
+    integer i;
+    
+    initial begin
+            nce = 1'b1; we = 1'b0; re = 1'b0;
+        #10 
+        //making a for loop to handle what is stored in mem
+        //"here we are going to write the data"
+        for (i = 0; i < 2048; i = i + 1) begin
+            #10 //at every falling edge
+            nce = 1'b0; we = 1'b1; 
+            wdata = i; //to the Reg pretty much
+            
+        end
+        
+        $20 $stop;
+    end
+
+endmodule

@@ -6,7 +6,7 @@ module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
     
     assign enable = e1 & (~ne2) & (~ne3);
     
-    reg     y0, y1, y2, y3, y4, y5, y6, y7;
+    reg    y0, y1, y2, y3, y4, y5, y6, y7;
     
     
     always @ (*) begin
@@ -22,7 +22,7 @@ module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
                 y7 = 1'b1;
             end 
             
-            if ({a2, a1, a0} == 3'b001) begin
+            else if ({a2, a1, a0} == 3'b001) begin
                 y0 = 1'b1;
                 y1 = 1'b0;
                 y2 = 1'b1;
@@ -32,7 +32,7 @@ module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
                 y6 = 1'b1;
                 y7 = 1'b1;
             end
-            if ({a2, a1, a0} == 3'b010) begin
+            else if ({a2, a1, a0} == 3'b010) begin
                 y0 = 1'b1;
                 y1 = 1'b1;
                 y2 = 1'b0;
@@ -42,7 +42,7 @@ module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
                 y6 = 1'b1;
                 y7 = 1'b1;
             end
-            if ({a2, a1, a0} == 3'b011) begin
+            else if ({a2, a1, a0} == 3'b011) begin
                 y0 = 1'b1;
                 y1 = 1'b1;
                 y2 = 1'b1;
@@ -52,7 +52,7 @@ module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
                 y6 = 1'b1;
                 y7 = 1'b1;
             end
-            if ({a2, a1, a0} == 3'b100) begin
+            else if ({a2, a1, a0} == 3'b100) begin
                 y0 = 1'b1;
                 y1 = 1'b1;
                 y2 = 1'b1;
@@ -62,7 +62,7 @@ module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
                 y6 = 1'b1;
                 y7 = 1'b1;
             end
-            if ({a2, a1, a0} == 3'b101) begin
+            else if ({a2, a1, a0} == 3'b101) begin
                 y0 = 1'b1;
                 y1 = 1'b1;
                 y2 = 1'b1;
@@ -72,7 +72,7 @@ module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
                 y6 = 1'b1;
                 y7 = 1'b1;
             end
-            if ({a2, a1, a0} == 3'b110) begin
+            else if ({a2, a1, a0} == 3'b110) begin
                 y0 = 1'b1;
                 y1 = 1'b1;
                 y2 = 1'b1;
@@ -82,7 +82,7 @@ module decoder3to8(a2, a1, a0, e1, ne2, ne3, y0, y1, y2, y3, y4, y5, y6, y7);
                 y6 = 1'b0;
                 y7 = 1'b1;
             end
-            if ({a2, a1, a0} == 3'b111) begin
+            else if ({a2, a1, a0} == 3'b111) begin
                 y0 = 1'b1;
                 y1 = 1'b1;
                 y2 = 1'b1;

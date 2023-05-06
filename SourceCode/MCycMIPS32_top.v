@@ -33,7 +33,7 @@ module MCycMIPS32_top(clk, nrst, MAX10_CLK1_50, KEY, SW, LEDR,
     
     decoder3to8     M5(.a2(addr[13]), .a1(addr[12]), .a0(addr[11]), .e1(1'b1), .ne2(1'b0), .ne3(1'b0), .y0(nce_rom), .y1(nce_ram), .y2(nce_outputModule), .y3(), .y4(), .y5(), .y6(), .y7());
     
-
+    //sram            M6(.clk(clk), .nce(nrst), .re(MemRead), .we(MemWrite), .addr(addr), .data(HEX0));
 
 endmodule
 

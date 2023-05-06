@@ -1,6 +1,5 @@
 `include "MyDefines.v"
 
-
 module rom(nrst, nce, re, addr, d_out); //re - read enable
     input           nrst, nce, re;
   //input  [10:2]   addr; this is an error

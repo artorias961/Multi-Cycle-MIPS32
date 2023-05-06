@@ -21,7 +21,6 @@ module real_reg32(clk, nrst, en, d_in, d_out);
     
     end
 
-
 endmodule
 
 

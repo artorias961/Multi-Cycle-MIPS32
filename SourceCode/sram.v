@@ -8,7 +8,7 @@ module sram(clk, nce, re, we, addr, data);
     reg [7:0] mem [0:2047];
     
     wire [7:0] m_out;
-    wire       ce;
+    //wire       ce; for gatelevel modeling
     wire       data_read;
     tri [7:0]  data;
     
@@ -47,5 +47,19 @@ module sram(clk, nce, re, we, addr, data);
     
     Behavioral modeling SUCKS for this, cause data needs to be declared as a register, 0 or 1
     */
+    assign m_out = mem[addr];
+    
+    always @ (posedge clk) begin
+        //if ((nce == 1'b0) && (re == 1'b1)) begin
+            //m_out <= mem[addr]; //this causes an error, where data is loaded too fast
+            // lets make this into an assign 
+            
+        //end else 
+        if ((nce == 1'b0) && (we == 1'b1)) begin
+            mem[addr] <= data;
+        end
+    
+    end
+    
 
 endmodule

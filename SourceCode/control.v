@@ -116,11 +116,11 @@ module control(clk, nrst,
             // Checking if the reset was hit or not
             if (nrst == 1'b0) begin
                 // Go back to the first statement
-                currState = S_IF;
+                currState <= S_IF;
             end 
             else begin
                 // Else go to the next state
-                currState = nextState;
+                currState <= nextState;
             end
         end
     
@@ -197,16 +197,16 @@ module control(clk, nrst,
                         ALUop = `_ALUOP_AND;
                     end
                     `_FUNC_OR: begin
-                    
+                        ALUop = `_ALUOP_OR;
                     end
                     `_FUNC_XOR: begin
-                    
+                        ALUop = `_ALUOP_XOR;
                     end
                     `_FUNC_NOR: begin
-                    
+                        ALUop = `_ALUOP_NOR;
                     end
                     `_FUNC_SLT: begin
-                    
+                        ALUop = `_ALUOP_SLT;
                     end
                     `_FUNC_SLL: begin
                         ALUop = `_ALUOP_SLL;

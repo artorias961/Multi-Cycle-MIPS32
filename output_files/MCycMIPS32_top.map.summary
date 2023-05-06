@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Wed May  3 18:43:21 2023
+Analysis & Elaboration Status : Successful - Fri May  5 15:21:46 2023
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : MCycMIPS32_top
-Top-level Entity Name : MCycMIPS32_top
+Top-level Entity Name : sram
 Family : MAX 10
 Total logic elements : N/A until Partition Merge
     Total combinational functions : N/A until Partition Merge

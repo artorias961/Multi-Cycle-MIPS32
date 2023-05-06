@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY MCycMIPS32_top
+set_global_assignment -name TOP_LEVEL_ENTITY sram
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:30:43  APRIL 12, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
@@ -449,9 +449,6 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_Lite -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE SourceCode/decoder3to8.v
 set_global_assignment -name VERILOG_FILE SourceCode/outputControl.v
 set_global_assignment -name VERILOG_FILE SourceCode/MyDefines.v
@@ -478,9 +475,18 @@ set_global_assignment -name VERILOG_FILE SourceCode/MIPS32.v
 set_global_assignment -name VERILOG_FILE SourceCode/sram.v
 set_global_assignment -name VERILOG_FILE SourceCode/MCycMIPS32_tb.v
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH MCycMIPS32_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH sram_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME MCycMIPS32_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME DUT -section_id MCycMIPS32_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MCycMIPS32_tb -section_id MCycMIPS32_tb
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_SETUP_SCRIPT simulation/questa/wave2.do -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE TestBench/sram_tb.v
+set_global_assignment -name EDA_TEST_BENCH_NAME sram_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME DUT -section_id sram_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sram_tb -section_id sram_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE SourceCode/MCycMIPS32_tb.v -section_id MCycMIPS32_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE TestBench/sram_tb.v -section_id sram_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
