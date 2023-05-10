@@ -16,11 +16,11 @@ module rom(nrst, nce, re, addr, d_out); //re - read enable
     always @ (*) begin
         if (nrst == 1'b0) begin
             mem[9'd0 ] = {`_OP_ADDI,    `_R0, `_R1, 16'd8}; // addi R1, R0, 08;
-            mem[9'h04] = {`_OP_RTYPE,   `_R0, `_R1, `_R1, 5'd16, `_FUNC_SLL};
+            mem[9'h04] = {`_OP_RTYPE,   `_R0, `_R1, `_R1, 5'd8, `_FUNC_SLL}; //5'd16
             mem[9'h08] = {`_OP_ADDI,    `_R0, `_R5, 16'd1};
             mem[9'h0C] = {`_OP_SW,      `_R1, `_R5, 16'd0};
             mem[9'h10] = {`_OP_ADDI,    `_R0, `_R2, 16'h10};
-            mem[9'h14] = {`_OP_RTYPE,   `_R0, `_R2, `_R2, 5'd16, `_FUNC_SLL};
+            mem[9'h14] = {`_OP_RTYPE,   `_R0, `_R2, `_R2, 5'd8, `_FUNC_SLL}; //5'd16
             mem[9'h18] = {`_OP_SW,      `_R0, `_R2, 16'd12};
             mem[9'h1C] = {`_OP_SW,      `_R1, `_R0, 16'd4};
             mem[9'h20] = {`_OP_LW,      `_R1, `_R5, 16'd4};

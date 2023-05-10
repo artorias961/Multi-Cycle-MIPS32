@@ -14,9 +14,18 @@ module mux8to1_32(in0, in1, in2, in3, in4, in5, in6, in7, sel, out);
 	output 	[31:0]	out;
 	
 	// Creating a register for the out since it does not carry information
-	reg 		[31:0]	out;
+	//reg 		[31:0]	out;
 	
-	//
+	assign out = (sel == 3'b000) ? in0 :
+                 (sel == 3'b001) ? in1 :
+                 (sel == 3'b010) ? in2 :
+                 (sel == 3'b011) ? in3 :
+                 (sel == 3'b100) ? in4 :
+                 (sel == 3'b101) ? in5 :
+                 (sel == 3'b110) ? in6 : in7;
+                 
+    
+    /*
 	always @ (*) begin
 		// Creating the case condition
 		case(sel) 
@@ -46,6 +55,7 @@ module mux8to1_32(in0, in1, in2, in3, in4, in5, in6, in7, sel, out);
 		
 		endcase
 	end
+    */
 	
 	
 

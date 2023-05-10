@@ -1,28 +1,21 @@
-module PC(clk, nrst, PCWrite, newPc, pc); //removed PCUpdate, changed to ce
-    input          clk, nrst, PCWrite;
+module PC(clk, nrst, ce, newPc, pc); //removed PCUpdate, changed to ce
+    input          clk, nrst;
     input  [31:0]  newPc;
     output [31:0]  pc;
-    //output         ce; //ce - chip enable
+    output         ce; //ce - chip enable
     
     
     reg [31:0] pc;
-    //reg        ce;
+    reg        ce;
     
-    //assign pc = (clk == 1'b0) ? 32'd0 : newPc;
-    
-    
-    always @ (negedge clk or negedge nrst) begin
-        if (nrst == 1'b0) begin//active high
+    always @ (posedge clk) begin
+        if (ce == 1'b0) begin//active high
             pc <= 32'd0;
-        end else if ((clk == 1'b0) && (PCWrite == 1'b1))begin
-            pc <= newPc;
         end else begin
-            pc <= pc;
+            pc <= newPc;
         end
     end
     
-    
-    /*
     //need another always for the reset signal
     always @ (posedge clk) begin
         if (nrst == 1'b0) begin
@@ -32,7 +25,7 @@ module PC(clk, nrst, PCWrite, newPc, pc); //removed PCUpdate, changed to ce
         end
     
     end
-    */
+    
     
     
     /* removing all this code to make the system a single cycle

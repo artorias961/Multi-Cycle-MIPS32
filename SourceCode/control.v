@@ -13,14 +13,14 @@ module control(clk, nrst,
                  ALUResult, IorD, PCWrite, MemRead, MemWrite;
     output [3:0] ALUop;
     output [2:0] AluSrcB;
-    output [1:0] PCSrc;
+    output [2:0] PCSrc;
     
     //outputs must be turned to registers to store the data
     reg         IR, MDR, MemtoReg, RegDst, RegWrite, RegA, RegB, AluSrcA,
                 ALUResult, IorD, PCWrite, MemRead, MemWrite;
     reg [3:0]   ALUop;
     reg [2:0]   AluSrcB;
-    reg [1:0]   PCSrc;
+    reg [2:0]   PCSrc;
     
     //4 bit parameter for all the states that will be used
 	parameter [3:0] 
@@ -143,7 +143,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b100;
                 ALUResult   = 1'b0;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;
                 IorD        = 1'b0;
                 PCWrite     = 1'b1;
                 MemRead     = 1'b1;
@@ -162,7 +162,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b011;
                 ALUResult   = 1'b1;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b0;
                 PCWrite     = 1'b0;
                 MemRead     = 1'b0;
@@ -180,7 +180,7 @@ module control(clk, nrst,
                 AluSrcA     = 1'b1;
                 AluSrcB     = 3'b000;
                 ALUResult   = 1'b1;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b0;
                 PCWrite     = 1'b0;
                 MemRead     = 1'b0;
@@ -233,7 +233,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b010;
                 ALUResult   = 1'b1;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b0;
                 PCWrite     = 1'b0;
                 MemRead     = 1'b0;
@@ -252,7 +252,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b100;
                 ALUResult   = 1'b1;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b01;
+                PCSrc       = 3'b001;
                 IorD        = 1'b0;
                 PCWrite     = 1'b1;
                 MemRead     = 1'b0;
@@ -271,7 +271,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b010;
                 ALUResult   = 1'b1;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b0;
                 PCWrite     = 1'b0;
                 MemRead     = 1'b0;
@@ -290,7 +290,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b000;
                 ALUResult   = 1'b0;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b10;
+                PCSrc       = 3'b010;
                 IorD        = 1'b0;
                 PCWrite     = 1'b1;
                 MemRead     = 1'b0;
@@ -308,7 +308,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b100;
                 ALUResult   = 1'b0;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b1;
                 PCWrite     = 1'b1;
                 MemRead     = 1'b1;
@@ -327,7 +327,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b100;
                 ALUResult   = 1'b0;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b1;
                 PCWrite     = 1'b1;
                 MemRead     = 1'b0;
@@ -346,7 +346,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b100;
                 ALUResult   = 1'b0;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b0;
                 PCWrite     = 1'b0;
                 MemRead     = 1'b0;
@@ -356,7 +356,7 @@ module control(clk, nrst,
             S_WB_I: begin
                 IR          = 1'b0;
                 MDR         = 1'b1;
-                MemtoReg    = 1'b1;
+                MemtoReg    = 1'b0;
                 RegDst      = 1'b0;
                 RegWrite    = 1'b1;
                 RegA        = 1'b0;
@@ -365,7 +365,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b100;
                 ALUResult   = 1'b0;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b1;
                 PCWrite     = 1'b0;
                 MemRead     = 1'b0;
@@ -384,7 +384,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b100;
                 ALUResult   = 1'b0;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b0;
                 PCWrite     = 1'b1;
                 MemRead     = 1'b0;
@@ -403,7 +403,7 @@ module control(clk, nrst,
                 AluSrcB     = 3'b000;
                 ALUResult   = 1'b0;
                 ALUop       = `_ALUOP_ADD;
-                PCSrc       = 2'b00;
+                PCSrc       = 3'b000;   
                 IorD        = 1'b0;
                 PCWrite     = 1'b0;
                 MemRead     = 1'b0;

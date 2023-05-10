@@ -12,7 +12,7 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
                 AluSrcA, AluResult, IorD, RegWrite, 
                 PCWrite;
                 
-    wire [1:0]  PCSrc;
+    wire [2:0]  PCSrc;
     wire [2:0]  AluSrcB;
     wire        zeroflag;
     
@@ -61,7 +61,7 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     
     mux2to1_32      M5(.in0(rt), .in1(rd), .sel(RegDst), .out(w_reg));
     
-    RegisterFile    M6(.ReadReg1(rs), .ReadReg2(rt), .WriteReg(w_reg), .WriteData(w_data), .ReadData1(r_data1), .ReadData2(r_data2), .RegWrite(RegWrite));
+    RegisterFile    M6(.clk(clk), .ReadReg1(rs), .ReadReg2(rt), .WriteReg(w_reg), .WriteData(w_data), .ReadData1(r_data1), .ReadData2(r_data2), .RegWrite(RegWrite));
     
     signext         M7(.imm16(imm16), .imm32(imm32));
     
@@ -91,7 +91,7 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     mux8to1_32     M18(.in0(alu_result), .in1(alu_result_r), .in2(addr32), .in3(r_data1_r), .in4(), .in5(), .in6(), .in7(), .sel(PCSrc), .out(PCSrc_out));
     
                    //I changed clk input from "PCWrite" to "clk"
-    PC             M19(.clk(clk), .nrst(nrst), .ce(ce), .newPc(PCSrc_out), .pc(pc));
+    PC             M19(.clk(clk), .nrst(nrst), .PCWrite(PCWrite), .newPc(PCSrc_out), .pc(pc));
     
     mux2to1_32     M20(.in0(pc), .in1(alu_result_r), .sel(IorD), .out(address));
     

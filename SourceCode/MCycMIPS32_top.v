@@ -27,7 +27,9 @@ module MCycMIPS32_top(clk, nrst, MAX10_CLK1_50, KEY, SW, LEDR,
     
     rom             M2(.nrst(nrst), .nce(nce_rom), .re(MemRead), .addr(addr[10:2]), .d_out(dataIn));
     
-    ram             M3(.clk(clk), .nce(nce_ram), .re(MemRead), .we(MemWrite), .addr(addr[10:2]), .d_in(dataOut), .d_out(dataIn));
+    sram            M3(.clk(clk), .nce(nce_ram), .re(MemRead), .we(MemWrite), .addr(addr[10:2]), .data());
+    
+    //ram             M3(.clk(clk), .nce(nce_ram), .re(MemRead), .we(MemWrite), .addr(addr[10:2]), .d_in(dataOut), .d_out(dataIn));
     
     outputModule    M4(.clk(clk), .nce(nce_outputModule), .we(MemWrite), .d_in(dataOut), .pins(LEDR));
     
