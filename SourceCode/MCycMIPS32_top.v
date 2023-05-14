@@ -18,20 +18,20 @@ module MCycMIPS32_top(clk, nrst, MAX10_CLK1_50, KEY, SW, LEDR,
     wire nce_rom, nce_ram, nce_outputModule;
     
     wire [31:0] addr;
-    wire [31:0] dataOut;
-    wire  [31:0] dataIn;
+    wire [31:0] data;
+    //wire  [31:0] dataIn;
     
     
     
-    MIPS32          M1(.clk(clk), .nrst(nrst), .MemWrite(MemWrite), .MemRead(MemRead), .data_in(dataIn), .address(addr), .data_out(dataOut));
+    MIPS32          M1(.clk(clk), .nrst(nrst), .MemWrite(MemWrite), .MemRead(MemRead), .address(addr), .data_out(data));
     
-    rom             M2(.nrst(nrst), .nce(nce_rom), .re(MemRead), .addr(addr[10:2]), .d_out(dataIn));
+    rom             M2(.nrst(nrst), .nce(nce_rom), .re(MemRead), .addr(addr[10:2]), .d_out(data));
     
-    sram            M3(.clk(clk), .nce(nce_ram), .re(MemRead), .we(MemWrite), .addr(addr[10:2]), .data());
+    sram            M3(.clk(clk), .nce(nce_ram), .re(MemRead), .we(MemWrite), .addr(addr[10:2]), .data(data));
     
     //ram             M3(.clk(clk), .nce(nce_ram), .re(MemRead), .we(MemWrite), .addr(addr[10:2]), .d_in(dataOut), .d_out(dataIn));
     
-    outputModule    M4(.clk(clk), .nce(nce_outputModule), .we(MemWrite), .d_in(dataOut), .pins(LEDR));
+    outputModule    M4(.clk(clk), .nce(nce_outputModule), .we(MemWrite), .d_in(data), .pins(LEDR));
     
     decoder3to8     M5(.a2(addr[13]), .a1(addr[12]), .a0(addr[11]), .e1(1'b1), .ne2(1'b0), .ne3(1'b0), .y0(nce_rom), .y1(nce_ram), .y2(nce_outputModule), .y3(), .y4(), .y5(), .y6(), .y7());
     

@@ -11,17 +11,17 @@ z2
 cModel Technology
 Z0 dC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/simulation/questa
 T_opt
-!s110 1683758718
-VmbO5]9ZmPmS2]RNoNG_m=3
+!s110 1684103291
+V<_=6MWf4m`lRIIVh@?<k41
 04 13 4 work MCycMIPS32_tb fast 0
-=1-98fa9b4fea22-645c1e7e-45-3e5c
+=1-98fa9b4fea22-6461607a-285-4a80
 !s124 OEM10U28 
 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
 Z1 tCvgOpt 0
 n@_opt
 OL;O;2021.2;73
 vALU
-Z2 !s110 1683758716
+Z2 !s110 1684103288
 !i10b 1
 !s100 :630Ce=]`XAb_h7Z93WhE3
 IeO2Mf`zDcz04R_gMCI]Wj3
@@ -36,7 +36,7 @@ Z4 OL;L;2021.2;73
 r1
 !s85 0
 31
-Z5 !s108 1683758716.000000
+Z5 !s108 1684103288.000000
 !s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MyDefines.v|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ALU.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ALU.v|
 !i113 0
@@ -45,7 +45,7 @@ Z7 !s92 -vlog01compat -work work +incdir+C:/Users/scodm/Desktop/School/Spring_20
 R1
 n@a@l@u
 vbit_extender_4
-Z8 !s110 1683758715
+Z8 !s110 1684103287
 !i10b 1
 !s100 z64Gl:X[jZ`]T30bAd52C0
 I3cZX=`HU6Oj[8HIb_=EQZ3
@@ -60,7 +60,7 @@ R4
 r1
 !s85 0
 31
-Z9 !s108 1683758715.000000
+Z9 !s108 1684103287.000000
 !s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/bit_extender_4.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/bit_extender_4.v|
 !i113 0
@@ -91,7 +91,7 @@ R6
 R7
 R1
 vdecoder3to8
-!s110 1683758713
+!s110 1684103285
 !i10b 1
 !s100 @al9_48T?YF7bOMH6c0C81
 IUOOg;dKf_`bzC_P7eN3z22
@@ -106,7 +106,7 @@ R4
 r1
 !s85 0
 31
-!s108 1683758713.000000
+!s108 1684103285.000000
 !s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v|
 !i113 0
@@ -138,12 +138,12 @@ R7
 R1
 n@i@d
 vMCycMIPS32_tb
-!s110 1683758717
+!s110 1684103289
 !i10b 1
-!s100 M8A<4ACI1O?XLz9P8GTVb0
-Id5=f7f`USz=kZ7zdGN97]3
+!s100 d?E=EcJkd1E?m69>:k?Sj3
+IeM0l:2z5XRo]nKj0Q8Z>B0
 R0
-w1683161823
+w1683759151
 8C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v
 FC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v
 !i122 19
@@ -153,7 +153,7 @@ R4
 r1
 !s85 0
 31
-!s108 1683758717.000000
+R5
 !s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_tb.v|
 !i113 0
@@ -164,14 +164,14 @@ n@m@cyc@m@i@p@s32_tb
 vMCycMIPS32_top
 R8
 !i10b 1
-!s100 YDg[b_dDcfZ8kAj51`d;`1
-IAa[38;;n1f?S`OKBCeoFa1
+!s100 OoT^]ie:hT_64:ba[KW`h3
+I`^IG]oRkAVT`Z7MJNNV7C3
 R0
-w1683321312
+w1684102965
 8C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v
 FC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v
 !i122 7
-L0 1 38
+L0 1 40
 R3
 R4
 r1
@@ -188,14 +188,14 @@ n@m@cyc@m@i@p@s32_top
 vMIPS32
 R2
 !i10b 1
-!s100 QdjOPje9_eW0_2n:1Tkag0
-I@3Nigd?lm<6d_Sc?z41hi2
+!s100 3@i9AGIdHL8ede8<Yg51W1
+IIC`lKR@kjzFIBB0SDFBiX1
 R0
-w1683758457
+w1684102966
 8C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v
 FC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v
-!i122 15
-L0 1 107
+!i122 14
+L0 1 109
 R3
 R4
 r1
@@ -225,7 +225,7 @@ R4
 r1
 !s85 0
 31
-Z10 !s108 1683758714.000000
+R9
 !s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/mux2to1_32.v|
 !i113 0
@@ -264,7 +264,7 @@ R0
 w1682795341
 8C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/outputModule.v
 FC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/outputModule.v
-!i122 13
+!i122 12
 L0 1 23
 R3
 R4
@@ -280,7 +280,7 @@ R7
 R1
 noutput@module
 vPC
-Z11 !s110 1683758714
+R8
 !i10b 1
 !s100 EhfbKDEMM8KnJH_5gGDSk1
 IBe15SbVQhXmO2VSFFef9?0
@@ -295,7 +295,7 @@ R4
 r1
 !s85 0
 31
-R10
+Z10 !s108 1684103286.000000
 !s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/PC.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/PC.v|
 !i113 0
@@ -303,29 +303,6 @@ R6
 R7
 R1
 n@p@c
-vram
-R2
-!i10b 1
-!s100 Eo?^2MzZ`J4WHI0h>JBQ83
-IOzOFAmOGWS1Sc?hO[;iD40
-R0
-w1683147768
-8C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ram.v
-FC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ram.v
-!i122 12
-L0 1 25
-R3
-R4
-r1
-!s85 0
-31
-R9
-!s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ram.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/ram.v|
-!i113 0
-R6
-R7
-R1
 vreal_reg32
 R2
 !i10b 1
@@ -335,7 +312,7 @@ R0
 w1683174269
 8C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/real_reg32.v
 FC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/real_reg32.v
-!i122 14
+!i122 13
 L0 1 24
 R3
 R4
@@ -350,7 +327,7 @@ R6
 R7
 R1
 vRegisterFile
-R11
+Z11 !s110 1684103286
 !i10b 1
 !s100 TOV;Ce3Tg[_d:BcAH<PZ;1
 Ie`_n2?YZ<iQVh04`jC3S72
@@ -376,10 +353,10 @@ n@register@file
 vrom
 R2
 !i10b 1
-!s100 []7f9zo:_4OUC9PWGnT@d2
-I;6o58BXndU]M1_m2HhKkB3
+!s100 HanJ<>clDeOlL@BUVf<en3
+I]miTOd3Cl0L]1WM^543JG1
 R0
-w1683168163
+w1683759854
 8C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v
 FC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v
 !i122 18
@@ -421,7 +398,7 @@ R7
 R1
 nshift@left2
 vshiftleft2_26
-R8
+R2
 !i10b 1
 !s100 a5U16kAW1gGXcE71g@2Ph2
 I<WOLNgChmH6gf@:gj0HA=1
@@ -462,6 +439,29 @@ r1
 R10
 !s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/signext.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/signext.v|
+!i113 0
+R6
+R7
+R1
+vsram
+R2
+!i10b 1
+!s100 RlbU>SamUO=ZO]di6>_YA1
+IPFf@7bag7iiV^a7FZCmV[3
+R0
+w1683325157
+8C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/sram.v
+FC:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/sram.v
+!i122 15
+L0 3 63
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/sram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode|C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/sram.v|
 !i113 0
 R6
 R7

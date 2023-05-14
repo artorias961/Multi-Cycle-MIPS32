@@ -1,7 +1,6 @@
-module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
+module MIPS32(clk, nrst, MemWrite, MemRead, address, data_out);
     input         clk, nrst; 
     output        MemWrite, MemRead;
-    input  [31:0] data_in;
     output [31:0] address;
     output [31:0] data_out;
     
@@ -48,12 +47,13 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     
     wire [3:0] aluop;
     wire [27:0] addr28;
+    wire [31:0] wire_data_out;
     
     //reg32           M1 (.di(d_in), .ctrl(IR), .do(r_id));
-    real_reg32      M1(.clk(clk), .nrst(nrst), .en(IR), .d_in(data_in), .d_out(r_id));
+    real_reg32      M1(.clk(clk), .nrst(nrst), .en(IR), .d_in(data_out), .d_out(r_id));
     
     //reg32           M2(.di(d_in), .ctrl(MDR), .do(mdr_r));
-    real_reg32      M2(.clk(clk), .nrst(nrst), .en(MDR), .d_in(data_in), .d_out(mdr_r));
+    real_reg32      M2(.clk(clk), .nrst(nrst), .en(MDR), .d_in(data_out), .d_out(mdr_r));
     
     ID              M3(.instr(r_id), .op(op), .rs(rs), .rt(rt), .rd(rd), .shamt(shamt), .func(func), .imm16(imm16), .address(addr26));
     
@@ -71,11 +71,11 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
     real_reg32      M9(.clk(clk), .nrst(nrst), .en(RegA), .d_in(r_data1), .d_out(r_data1_r));
     
     //reg32          M10(.di(r_data2), .ctrl(RegB), .do(r_data2_r));
-    real_reg32     M10(.clk(clk), .nrst(nrst), .en(RegB), .d_in(r_data2), .d_out(data_out));
+    real_reg32     M10(.clk(clk), .nrst(nrst), .en(RegB), .d_in(r_data2), .d_out(wire_data_out));
     
     shiftLeft2     M11(.in(imm32), .out(shift_imm32));
     
-    mux8to1_32     M12(.in0(data_out), .in1(shamt), .in2(imm32), .in3(shift_imm32), .in4(32'd4), .in5(zero_imm32), .in6(), .in7(), .sel(AluSrcB), .out(alu_B));
+    mux8to1_32     M12(.in0(wire_data_out), .in1(shamt), .in2(imm32), .in3(shift_imm32), .in4(32'd4), .in5(zero_imm32), .in6(), .in7(), .sel(AluSrcB), .out(alu_B));
     
     shiftleft2_26  M13(.d_i(addr26), .d_o(addr28));
     
@@ -99,8 +99,10 @@ module MIPS32(clk, nrst, MemWrite, MemRead, data_in, address, data_out);
                     .IR(IR), .MDR(MDR), .MemtoReg(MemToReg), .RegDst(RegDst), .RegWrite(RegWrite), .RegA(RegA), .RegB(RegB), .AluSrcA(AluSrcA),
                     .AluSrcB(AluSrcB), .ALUop(aluop), .ALUResult(AluResult), .PCSrc(PCSrc), .IorD(IorD), .PCWrite(PCWrite), .MemRead(MemRead), .MemWrite(MemWrite));
     
+    assign data_out = (MemWrite == 1'b1) ? wire_data_out : 32'bz;
     
-
+    //bufif1         M22(data_in, data_out, MemWrite); 
+    //assign data = (data_read == 1'b0) ? 8'bz : m_out;
 
 
 
