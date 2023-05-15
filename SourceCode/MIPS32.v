@@ -24,7 +24,7 @@ module MIPS32(clk, nrst, MemWrite, MemRead, address, data_out);
     wire [4:0] rs;
     wire [4:0] rt;
     wire [4:0] rd;
-    wire [4:0] shamt;
+    wire [31:0] shamt;
     wire [15:0] imm16;
     wire [25:0] addr26;
     

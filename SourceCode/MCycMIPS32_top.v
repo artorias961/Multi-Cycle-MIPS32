@@ -25,7 +25,7 @@ module MCycMIPS32_top(clk, nrst, MAX10_CLK1_50, KEY, SW, LEDR,
     
     MIPS32          M1(.clk(clk), .nrst(nrst), .MemWrite(MemWrite), .MemRead(MemRead), .address(addr), .data_out(data));
     
-    rom             M2(.nrst(nrst), .nce(nce_rom), .re(MemRead), .addr(addr[10:2]), .d_out(data));
+    rom             M2(.nrst(nrst), .nce(nce_rom), .re(MemRead), .addr(addr[8:0]), .d_out(data));
     
     sram            M3(.clk(clk), .nce(nce_ram), .re(MemRead), .we(MemWrite), .addr(addr[10:2]), .data(data));
     

@@ -16,7 +16,7 @@ module MCycMIPS32_tb();
             nrst = 1'b0;
         #10 nrst = 1'b1;
         
-        #3000 $stop;
+        #1200 $stop;
     end
 
 

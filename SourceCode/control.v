@@ -178,7 +178,6 @@ module control(clk, nrst,
                 RegA        = 1'b0;
                 RegB        = 1'b0;
                 AluSrcA     = 1'b1;
-                AluSrcB     = 3'b000;
                 ALUResult   = 1'b1;
                 PCSrc       = 3'b000;   
                 IorD        = 1'b0;
@@ -189,33 +188,43 @@ module control(clk, nrst,
                 case(func) 
                     `_FUNC_ADD: begin
                         ALUop = `_ALUOP_ADD;
+                        AluSrcB     = 3'b000;
                     end
                     `_FUNC_SUB: begin
                         ALUop = `_ALUOP_SUB;
+                        AluSrcB     = 3'b000;
                     end
                     `_FUNC_AND: begin
                         ALUop = `_ALUOP_AND;
+                        AluSrcB     = 3'b000;
                     end
                     `_FUNC_OR: begin
                         ALUop = `_ALUOP_OR;
+                        AluSrcB     = 3'b000;
                     end
                     `_FUNC_XOR: begin
                         ALUop = `_ALUOP_XOR;
+                        AluSrcB     = 3'b000;
                     end
                     `_FUNC_NOR: begin
                         ALUop = `_ALUOP_NOR;
+                        AluSrcB     = 3'b000;
                     end
                     `_FUNC_SLT: begin
                         ALUop = `_ALUOP_SLT;
+                        AluSrcB     = 3'b000;
                     end
                     `_FUNC_SLL: begin
                         ALUop = `_ALUOP_SLL;
+                        AluSrcB     = 3'b001;
                     end
                     `_FUNC_SRL: begin
                         ALUop = `_ALUOP_SRL;
+                        AluSrcB     = 3'b001;
                     end
                     default: begin
                         ALUop = `_ALUOP_ADD;
+                        AluSrcB     = 3'b000;
                     end
                     
                 endcase
@@ -310,7 +319,7 @@ module control(clk, nrst,
                 ALUop       = `_ALUOP_ADD;
                 PCSrc       = 3'b000;   
                 IorD        = 1'b1;
-                PCWrite     = 1'b1;
+                PCWrite     = 1'b0;
                 MemRead     = 1'b1;
                 MemWrite    = 1'b0;
             
@@ -329,7 +338,7 @@ module control(clk, nrst,
                 ALUop       = `_ALUOP_ADD;
                 PCSrc       = 3'b000;   
                 IorD        = 1'b1;
-                PCWrite     = 1'b1;
+                PCWrite     = 1'b0;
                 MemRead     = 1'b0;
                 MemWrite    = 1'b1;
             
@@ -374,7 +383,7 @@ module control(clk, nrst,
             end
             S_WB_LW: begin
                 IR          = 1'b0;
-                MDR         = 1'b0;
+                MDR         = 1'b1;
                 MemtoReg    = 1'b1;
                 RegDst      = 1'b0;
                 RegWrite    = 1'b1;
@@ -386,7 +395,7 @@ module control(clk, nrst,
                 ALUop       = `_ALUOP_ADD;
                 PCSrc       = 3'b000;   
                 IorD        = 1'b0;
-                PCWrite     = 1'b1;
+                PCWrite     = 1'b0;
                 MemRead     = 1'b0;
                 MemWrite    = 1'b0;
             

@@ -1,16 +1,16 @@
 //keep this for future reference, no how to use regular RAM
 
-module sram(clk, nce, re, we, addr, data);
+module old_sram(clk, nce, re, we, addr, data);
     input clk, nce, re, we;
-    input [8:0] addr;
-    inout [31:0] data;
+    input [10:0] addr;
+    inout [7:0] data;
     
-    reg [31:0] mem [0:2047];
+    reg [7:0] mem [0:2047];
     
-    wire [31:0] m_out;
+    wire [7:0] m_out;
     //wire       ce; for gatelevel modeling
-    wire        data_read;
-    tri [31:0]  data;
+    wire       data_read;
+    tri [7:0]  data;
     
     /*
     //gatelevel modeling solution
@@ -31,11 +31,9 @@ module sram(clk, nce, re, we, addr, data);
     
     // Dataflow modeling for data read
     
-    assign m_out = mem[addr];
-    
     //assign data_read = ((nce == 1'b0) && (re == 1'b1)) ? 1'b1 : 1'b0;
     assign data_read = re & (~nce);
-    assign data = (data_read == 1'b0) ? 32'bz : m_out;
+    assign data = (data_read == 1'b0) ? 8'bz : m_out;
     
     /*
     // Behavioral modeling for data read
@@ -49,7 +47,7 @@ module sram(clk, nce, re, we, addr, data);
     
     Behavioral modeling SUCKS for this, cause data needs to be declared as a register, 0 or 1
     */
-    
+    assign m_out = mem[addr];
     
     always @ (posedge clk) begin
         //if ((nce == 1'b0) && (re == 1'b1)) begin

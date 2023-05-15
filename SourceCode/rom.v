@@ -11,16 +11,16 @@ module rom(nrst, nce, re, addr, d_out); //re - read enable
     
     reg [31:0] mem[0:511]; //FAT memory
     
-    assign d_out = ((nce == 1'b0) && (re == 1'b1))? mem[addr] : 32'bz;
+    assign d_out = ((nce == 1'b0) && (re == 1'b1)) ? mem[addr] : 32'bz;
     
     always @ (*) begin
         if (nrst == 1'b0) begin
             mem[9'd0 ] = {`_OP_ADDI,    `_R0, `_R1, 16'd8}; // addi R1, R0, 08;
-            mem[9'h04] = {`_OP_RTYPE,   `_R0, `_R1, `_R1, 5'd8, `_FUNC_SLL}; //5'd16
+            mem[9'h04] = {`_OP_RTYPE,   `_R1, `_R0, `_R1, 5'd8, `_FUNC_SLL}; //5'd16
             mem[9'h08] = {`_OP_ADDI,    `_R0, `_R5, 16'd1};
             mem[9'h0C] = {`_OP_SW,      `_R1, `_R5, 16'd0};
             mem[9'h10] = {`_OP_ADDI,    `_R0, `_R2, 16'h10};
-            mem[9'h14] = {`_OP_RTYPE,   `_R0, `_R2, `_R2, 5'd8, `_FUNC_SLL}; //5'd16
+            mem[9'h14] = {`_OP_RTYPE,   `_R2, `_R0, `_R2, 5'd8, `_FUNC_SLL}; //5'd16
             mem[9'h18] = {`_OP_SW,      `_R0, `_R2, 16'd12};
             mem[9'h1C] = {`_OP_SW,      `_R1, `_R0, 16'd4};
             mem[9'h20] = {`_OP_LW,      `_R1, `_R5, 16'd4};
@@ -31,7 +31,7 @@ module rom(nrst, nce, re, addr, d_out); //re - read enable
             mem[9'h30] = {`_OP_LW,      `_R1, `_R6, 16'd0};
             mem[9'h34] = {`_OP_LW,      `_R1, `_R7, 16'd12};
             mem[9'h38] = {`_OP_SW,      `_R7, `_R6, 16'd0};
-            mem[9'h3C] = {`_OP_RTYPE,   `_R0, `_R6, `_R6, 5'd1, `_FUNC_SLL};
+            mem[9'h3C] = {`_OP_RTYPE,   `_R6, `_R0, `_R6, 5'd1, `_FUNC_SLL};
             mem[9'h40] = {`_OP_SW,      `_R7, `_R6, 16'd0};
             //this instruction is for j  LOOP1
             mem[9'h44] = {`_OP_ADDI,    `_R5, `_R5, 16'd1};
@@ -43,7 +43,7 @@ module rom(nrst, nce, re, addr, d_out); //re - read enable
             mem[9'h5C] = {`_OP_RTYPE,   `_R0, `_R5, `_R6, 5'd0, `_FUNC_SLT};
             mem[9'h60] = {`_OP_BEQ,     `_R0, `_R6, 16'd8};
             mem[9'h64] = {`_OP_LW,      `_R1, `_R6, 16'd0};
-            mem[9'h68] = {`_OP_RTYPE,   `_R0, `_R6, `_R6, 5'd1, `_FUNC_SRL};
+            mem[9'h68] = {`_OP_RTYPE,   `_R6, `_R0, `_R6, 5'd1, `_FUNC_SRL};
             mem[9'h6C] = {`_OP_SW,      `_R1, `_R6, 16'd0};
             mem[9'h70] = {`_OP_LW,      `_R1, `_R7, 16'd12};
             mem[9'h74] = {`_OP_SW,      `_R7, `_R6, 16'd0};
@@ -67,6 +67,17 @@ module rom(nrst, nce, re, addr, d_out); //re - read enable
             mem[9'hBC] = {`_OP_SW,      `_R1, `_R5, 16'd4};
             mem[9'hC0] = {`_OP_J, 26'h22};
             mem[9'hC4] = {`_OP_J, 26'h07};
+            
+            
+            mem[9'hC8] = {32'bz};
+            mem[9'hCC] = {32'bz};
+            mem[9'hD0] = {32'bz};
+            mem[9'hD4] = {32'bz};
+            mem[9'hD8] = {32'bz};
+            mem[9'hDC] = {32'bz};
+            mem[9'hE0] = {32'bz};
+            mem[9'hE4] = {32'bz};
+            
             
             
         
