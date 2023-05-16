@@ -9,9 +9,10 @@ module ALU(ALUop, A, B, ALUResult, zero); //add a zeroflag element
     
     reg [31:0] ALUResult;
     
-    assign zero = 1'b0;
+    assign zero = ((ALUop == `_ALUOP_SUB) && (ALUResult == 32'd0)) ? 1'b0: 1'b1;
     
     always @ (*) begin //combinational circuit, so use all inputs
+        
         case (ALUop) 
             `_ALUOP_ADD: begin
                 ALUResult = A + B;

@@ -40,6 +40,7 @@ module MIPS32(clk, nrst, MemWrite, MemRead, address, data_out);
     wire [31:0] alu_B;
     wire [31:0] alu_result;
     wire [31:0] alu_result_r;
+    wire [31:0] alu_result_pc;
     wire [31:0] pc;
     wire [31:0] PCSrc_out;
     wire [31:0] addr32;
@@ -85,17 +86,19 @@ module MIPS32(clk, nrst, MemWrite, MemRead, address, data_out);
     
     ALU            M16(.ALUop(aluop), .A(alu_A), .B(alu_B), .ALUResult(alu_result), .zero(zeroflag));
     
+    assign alu_result_pc = (zeroflag == 1'b0) ? alu_result_r : 32'bz;
+    
     //reg32          M17(.di(alu_result), .ctrl(AluResult), .do(alu_result_r));
     real_reg32     M17(.clk(clk), .nrst(nrst), .en(AluResult), .d_in(alu_result), .d_out(alu_result_r));
     
-    mux8to1_32     M18(.in0(alu_result), .in1(alu_result_r), .in2(addr32), .in3(r_data1_r), .in4(), .in5(), .in6(), .in7(), .sel(PCSrc), .out(PCSrc_out));
+    mux8to1_32     M18(.in0(alu_result), .in1(alu_result_pc), .in2(addr32), .in3(r_data1_r), .in4(), .in5(), .in6(), .in7(), .sel(PCSrc), .out(PCSrc_out));
     
                    //I changed clk input from "PCWrite" to "clk"
     PC             M19(.clk(clk), .nrst(nrst), .PCWrite(PCWrite), .newPc(PCSrc_out), .pc(pc));
     
     mux2to1_32     M20(.in0(pc), .in1(alu_result_r), .sel(IorD), .out(address));
     
-    control        M21(.clk(clk), .nrst(nrst), .op(op), .func(func), 
+    control        M21(.clk(clk), .nrst(nrst), .op(op), .func(func), .zero(zeroflag),
                     .IR(IR), .MDR(MDR), .MemtoReg(MemToReg), .RegDst(RegDst), .RegWrite(RegWrite), .RegA(RegA), .RegB(RegB), .AluSrcA(AluSrcA),
                     .AluSrcB(AluSrcB), .ALUop(aluop), .ALUResult(AluResult), .PCSrc(PCSrc), .IorD(IorD), .PCWrite(PCWrite), .MemRead(MemRead), .MemWrite(MemWrite));
     

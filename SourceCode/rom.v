@@ -29,24 +29,24 @@ module rom(nrst, nce, re, addr, d_out); //re - read enable
             //this instruction is for beq r6, r0, DONE1
             mem[9'h2C] = {`_OP_BEQ,     `_R0, `_R6, 16'd8};
             mem[9'h30] = {`_OP_LW,      `_R1, `_R6, 16'd0};
-            mem[9'h34] = {`_OP_LW,      `_R1, `_R7, 16'd12};
-            mem[9'h38] = {`_OP_SW,      `_R7, `_R6, 16'd0};
+            mem[9'h34] = {`_OP_LW,      `_R2, `_R7, 16'd0};
+            mem[9'h38] = {`_OP_SW,      `_R2, `_R6, 16'd0};
             mem[9'h3C] = {`_OP_RTYPE,   `_R6, `_R0, `_R6, 5'd1, `_FUNC_SLL};
-            mem[9'h40] = {`_OP_SW,      `_R7, `_R6, 16'd0};
+            mem[9'h40] = {`_OP_SW,      `_R1, `_R6, 16'd0};
             //this instruction is for j  LOOP1
             mem[9'h44] = {`_OP_ADDI,    `_R5, `_R5, 16'd1};
             mem[9'h48] = {`_OP_SW,      `_R1, `_R5, 16'd4};
             mem[9'h4C] = {`_OP_J, 26'h08};
             mem[9'h50] = {`_OP_ADDI,    `_R0, `_R5, 16'd10};
             mem[9'h54] = {`_OP_SW,      `_R1, `_R5, 16'd4};
-            mem[9'h58] = {`_OP_LW,      `_R1, `_R6, 16'd4};
+            mem[9'h58] = {`_OP_LW,      `_R1, `_R5, 16'd4};
             mem[9'h5C] = {`_OP_RTYPE,   `_R0, `_R5, `_R6, 5'd0, `_FUNC_SLT};
             mem[9'h60] = {`_OP_BEQ,     `_R0, `_R6, 16'd8};
             mem[9'h64] = {`_OP_LW,      `_R1, `_R6, 16'd0};
             mem[9'h68] = {`_OP_RTYPE,   `_R6, `_R0, `_R6, 5'd1, `_FUNC_SRL};
             mem[9'h6C] = {`_OP_SW,      `_R1, `_R6, 16'd0};
             mem[9'h70] = {`_OP_LW,      `_R1, `_R7, 16'd12};
-            mem[9'h74] = {`_OP_SW,      `_R7, `_R6, 16'd0};
+            mem[9'h74] = {`_OP_SW,      `_R2, `_R6, 16'd0};
             mem[9'h78] = {`_OP_ADDI,    `_R5, `_R5, -16'd1};
             mem[9'h7C] = {`_OP_SW,      `_R1, `_R5, 16'd4};
             mem[9'h80] = {`_OP_J, 26'h16};

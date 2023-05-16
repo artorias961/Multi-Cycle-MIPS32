@@ -11,9 +11,9 @@ module outputModule(clk, nce, we, d_in, pins); //output module only needs to wri
     //on falling edge write the data to the pins
     always @ (negedge clk) begin
         if ((nce == 1'b0) && (we == 1'b1)) begin
-            pins <= d_in;
+            pins <= d_in[9:0];
         end else begin
-            pins <= 10'd0;
+            pins <= pins;
         end
         
     end

@@ -1,5 +1,5 @@
 Analysis & Elaboration report for MCycMIPS32_top
-Sun May 14 23:52:31 2023
+Mon May 15 18:18:44 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   5. Analysis & Elaboration Settings
   6. Port Connectivity Checks: "decoder3to8:M5"
   7. Port Connectivity Checks: "MIPS32:M1|mux8to1_32:M18"
-  8. Port Connectivity Checks: "MIPS32:M1|ALU:M16"
-  9. Port Connectivity Checks: "MIPS32:M1|mux8to1_32:M12"
- 10. Port Connectivity Checks: "MIPS32:M1|mux2to1_32:M5"
- 11. Port Connectivity Checks: "MIPS32:M1"
- 12. Analysis & Elaboration Messages
- 13. Analysis & Elaboration Suppressed Messages
+  8. Port Connectivity Checks: "MIPS32:M1|mux8to1_32:M12"
+  9. Port Connectivity Checks: "MIPS32:M1|mux2to1_32:M5"
+ 10. Port Connectivity Checks: "MIPS32:M1"
+ 11. Analysis & Elaboration Messages
+ 12. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -45,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                      ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sun May 14 23:52:31 2023          ;
+; Analysis & Elaboration Status      ; Successful - Mon May 15 18:18:44 2023          ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                      ; MCycMIPS32_top                                 ;
 ; Top-level Entity Name              ; MCycMIPS32_top                                 ;
@@ -215,15 +214,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "MIPS32:M1|ALU:M16"                                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +--------------------------------------------------------+
 ; Port Connectivity Checks: "MIPS32:M1|mux8to1_32:M12"   ;
 +------------+-------+----------+------------------------+
@@ -263,7 +253,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun May 14 23:52:21 2023
+    Info: Processing started: Mon May 15 18:18:35 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MCycMIPS32 -c MCycMIPS32_top --analysis_and_elaboration
 Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -323,8 +313,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file testben
     Info (12023): Found entity 1: sram_tb File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/TestBench/sram_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file sourcecode/old_sram.v
     Info (12023): Found entity 1: old_sram File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/old_sram.v Line: 3
-Warning (10236): Verilog HDL Implicit Net warning at shiftleft2_26.v(5): created implicit net for "do" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 5
-Warning (10463): Verilog HDL Declaration warning at shiftleft2_26.v(5): "do" is SystemVerilog-2005 keyword File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 5
 Info (12127): Elaborating entity "MCycMIPS32_top" for the top level hierarchy
 Warning (10034): Output port "HEX0" at MCycMIPS32_top.v(10) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 10
 Warning (10034): Output port "HEX1" at MCycMIPS32_top.v(11) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 11
@@ -333,22 +321,19 @@ Warning (10034): Output port "HEX3" at MCycMIPS32_top.v(13) has no driver File: 
 Warning (10034): Output port "HEX4" at MCycMIPS32_top.v(14) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 14
 Warning (10034): Output port "HEX5" at MCycMIPS32_top.v(15) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 15
 Info (12128): Elaborating entity "MIPS32" for hierarchy "MIPS32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 26
-Info (12128): Elaborating entity "real_reg32" for hierarchy "MIPS32:M1|real_reg32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 53
-Info (12128): Elaborating entity "ID" for hierarchy "MIPS32:M1|ID:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 58
-Info (12128): Elaborating entity "mux2to1_32" for hierarchy "MIPS32:M1|mux2to1_32:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 60
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "MIPS32:M1|RegisterFile:M6" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 64
-Info (12128): Elaborating entity "signext" for hierarchy "MIPS32:M1|signext:M7" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 66
-Info (12128): Elaborating entity "zeroExtImm" for hierarchy "MIPS32:M1|zeroExtImm:M8" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 68
-Info (12128): Elaborating entity "shiftLeft2" for hierarchy "MIPS32:M1|shiftLeft2:M11" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 76
-Info (12128): Elaborating entity "mux8to1_32" for hierarchy "MIPS32:M1|mux8to1_32:M12" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 78
-Info (12128): Elaborating entity "shiftleft2_26" for hierarchy "MIPS32:M1|shiftleft2_26:M13" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 80
-Warning (10036): Verilog HDL or VHDL warning at shiftleft2_26.v(5): object "do" assigned a value but never read File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 5
-Warning (10230): Verilog HDL assignment warning at shiftleft2_26.v(5): truncated value with size 28 to match size of target (1) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 5
-Warning (10034): Output port "d_o" at shiftleft2_26.v(3) has no driver File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/shiftleft2_26.v Line: 3
-Info (12128): Elaborating entity "bit_extender_4" for hierarchy "MIPS32:M1|bit_extender_4:M14" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 82
-Info (12128): Elaborating entity "ALU" for hierarchy "MIPS32:M1|ALU:M16" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 86
-Info (12128): Elaborating entity "PC" for hierarchy "MIPS32:M1|PC:M19" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 94
-Info (12128): Elaborating entity "control" for hierarchy "MIPS32:M1|control:M21" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 100
+Info (12128): Elaborating entity "real_reg32" for hierarchy "MIPS32:M1|real_reg32:M1" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 54
+Info (12128): Elaborating entity "ID" for hierarchy "MIPS32:M1|ID:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 59
+Info (12128): Elaborating entity "mux2to1_32" for hierarchy "MIPS32:M1|mux2to1_32:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 61
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "MIPS32:M1|RegisterFile:M6" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 65
+Info (12128): Elaborating entity "signext" for hierarchy "MIPS32:M1|signext:M7" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 67
+Info (12128): Elaborating entity "zeroExtImm" for hierarchy "MIPS32:M1|zeroExtImm:M8" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 69
+Info (12128): Elaborating entity "shiftLeft2" for hierarchy "MIPS32:M1|shiftLeft2:M11" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 77
+Info (12128): Elaborating entity "mux8to1_32" for hierarchy "MIPS32:M1|mux8to1_32:M12" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 79
+Info (12128): Elaborating entity "shiftleft2_26" for hierarchy "MIPS32:M1|shiftleft2_26:M13" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 81
+Info (12128): Elaborating entity "bit_extender_4" for hierarchy "MIPS32:M1|bit_extender_4:M14" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 83
+Info (12128): Elaborating entity "ALU" for hierarchy "MIPS32:M1|ALU:M16" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 87
+Info (12128): Elaborating entity "PC" for hierarchy "MIPS32:M1|PC:M19" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 97
+Info (12128): Elaborating entity "control" for hierarchy "MIPS32:M1|control:M21" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MIPS32.v Line: 103
 Warning (10240): Verilog HDL Always Construct warning at control.v(49): inferring latch(es) for variable "nextState", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
 Info (10041): Inferred latch for "nextState.S_WB_LW" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
 Info (10041): Inferred latch for "nextState.S_WB_I" at control.v(49) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/control.v Line: 49
@@ -2279,7 +2264,6 @@ Info (10041): Inferred latch for "mem[0][30]" at rom.v(17) File: C:/Users/scodm/
 Info (10041): Inferred latch for "mem[0][31]" at rom.v(17) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/rom.v Line: 17
 Info (12128): Elaborating entity "sram" for hierarchy "sram:M3" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 30
 Info (12128): Elaborating entity "outputModule" for hierarchy "outputModule:M4" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 34
-Warning (10230): Verilog HDL assignment warning at outputModule.v(14): truncated value with size 32 to match size of target (10) File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/outputModule.v Line: 14
 Info (12128): Elaborating entity "decoder3to8" for hierarchy "decoder3to8:M5" File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/MCycMIPS32_top.v Line: 36
 Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y0", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
 Warning (10240): Verilog HDL Always Construct warning at decoder3to8.v(13): inferring latch(es) for variable "y1", which holds its previous value in one or more paths through the always construct File: C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/SourceCode/decoder3to8.v Line: 13
@@ -2511,11 +2495,11 @@ Warning (20013): Ignored 211 assignments for entity "DE10_Lite" -- entity does n
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_Lite -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_Lite -section_id Top was ignored
 Info (144001): Generated suppressed messages file C:/Users/scodm/Desktop/School/Spring_2023/4480/Project_Git/Multi-Cycle-MIPS32/output_files/MCycMIPS32_top.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 295 warnings
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 289 warnings
     Info: Peak virtual memory: 4741 megabytes
-    Info: Processing ended: Sun May 14 23:52:31 2023
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Processing ended: Mon May 15 18:18:44 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +--------------------------------------------+

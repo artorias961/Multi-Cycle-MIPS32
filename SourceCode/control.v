@@ -1,11 +1,11 @@
 `include "MyDefines.v"
 
 module control(clk, nrst, 
-                op, func, 
+                op, func, zero,  
                 IR, MDR, MemtoReg, RegDst, RegWrite, RegA, RegB, AluSrcA,
                 AluSrcB, ALUop, ALUResult, PCSrc, IorD, PCWrite, MemRead, MemWrite);
     //initialize the inputs and the outputs
-    input       clk, nrst;
+    input       clk, nrst, zero;
     input [5:0] op;
     input [5:0] func;
     
@@ -258,14 +258,20 @@ module control(clk, nrst,
                 RegA        = 1'b0;
                 RegB        = 1'b0;
                 AluSrcA     = 1'b1;
-                AluSrcB     = 3'b100;
-                ALUResult   = 1'b1;
-                ALUop       = `_ALUOP_ADD;
-                PCSrc       = 3'b001;
+                AluSrcB     = 3'b000;
+                ALUResult   = 1'b0;
+                ALUop       = `_ALUOP_SUB;
                 IorD        = 1'b0;
-                PCWrite     = 1'b1;
                 MemRead     = 1'b0;
                 MemWrite    = 1'b1;
+                
+                if (zero == 1'b0) begin
+                    PCSrc   = 3'b001;
+                    PCWrite = 1'b1;
+                end else begin
+                    PCSrc   = 3'b000;
+                    PCWrite = 1'b0;
+                end
             
             end
             S_EXE_LW: begin
