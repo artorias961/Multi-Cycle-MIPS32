@@ -1,0 +1,15 @@
+
+State Machine - |MCycMIPS32_top|MIPS32:M1|control:M21|currState
+Name currState.S_WB_LW currState.S_WB_I currState.S_WB_R currState.S_MEM_SW currState.S_MEM_LW currState.S_EXE_J currState.S_EXE_LW currState.S_EXE_BEQ currState.S_EXE_I currState.S_EXE_R currState.S_ID currState.S_IF 
+currState.S_IF 0 0 0 0 0 0 0 0 0 0 0 0 
+currState.S_ID 0 0 0 0 0 0 0 0 0 0 1 1 
+currState.S_EXE_R 0 0 0 0 0 0 0 0 0 1 0 1 
+currState.S_EXE_I 0 0 0 0 0 0 0 0 1 0 0 1 
+currState.S_EXE_BEQ 0 0 0 0 0 0 0 1 0 0 0 1 
+currState.S_EXE_LW 0 0 0 0 0 0 1 0 0 0 0 1 
+currState.S_EXE_J 0 0 0 0 0 1 0 0 0 0 0 1 
+currState.S_MEM_LW 0 0 0 0 1 0 0 0 0 0 0 1 
+currState.S_MEM_SW 0 0 0 1 0 0 0 0 0 0 0 1 
+currState.S_WB_R 0 0 1 0 0 0 0 0 0 0 0 1 
+currState.S_WB_I 0 1 0 0 0 0 0 0 0 0 0 1 
+currState.S_WB_LW 1 0 0 0 0 0 0 0 0 0 0 1 
